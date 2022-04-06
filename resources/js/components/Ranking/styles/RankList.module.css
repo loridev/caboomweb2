@@ -1,0 +1,21 @@
+.ranking {
+    color: white;
+    border-collapse: collapse;
+    width: 95vw;
+    border: 0.5px solid white;
+    margin-bottom: 2vh;
+}
+
+.ranking th, .ranking td {
+    text-align: left;
+    padding: 8px;
+}
+
+.ranking th {
+    background-color: var(--main-color);
+}
+
+.ranking tbody tr:nth-child(even) {
+    background-color: var(--background-light);
+}
+

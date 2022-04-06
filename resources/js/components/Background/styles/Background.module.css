@@ -1,0 +1,37 @@
+.background {
+    background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+    height: 91vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.8);
+    filter:brightness(0.5);
+}
+
+.container {
+    position: relative;
+    display: flex;
+}
+
+.video {
+    position:relative;
+    z-index:0;
+}
+
+.containerOver {
+    position:absolute;
+    text-align: center;
+    z-index:1;
+    width: 100vw;
+    align-self: center;
+}
+
+.text {
+    font-size: 6rem;
+    margin-bottom: 10vh;
+}
+
+@media (max-width: 648px) {
+    
+}
+

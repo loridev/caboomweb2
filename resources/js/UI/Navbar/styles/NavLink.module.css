@@ -1,0 +1,17 @@
+.option {
+    color: white;
+}
+
+.option :hover {
+    color: lightgray;
+}
+
+@media (max-width: 648px) {
+    .option {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 10vw;
+        padding: 30px 0px;
+    }
+}
