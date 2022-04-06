@@ -8,6 +8,6 @@
 </head>
 <body>
     <div id="root"></div>
-    <script src="{{ asset('js/app.js', true) }}" defer></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </body>
 </html>
