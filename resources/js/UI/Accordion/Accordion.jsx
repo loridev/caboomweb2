@@ -6,10 +6,10 @@ function Accordion(props) {
     const handleActive = () => setIsActive(!isActive);
 
     return (
-        <div className={classes.accordion}>
+        <div onClick={props.onClick} className={classes.accordion}>
             <div className={classes.item}>
                 <div className={classes.title} onClick={handleActive}>
-                    <div>{props.title}</div>
+                    <div className="highlight">{props.title}</div>
                     <div>{isActive ? '▲' : '▼'}</div>
                 </div>
                 {isActive && <div className={classes.content}>{props.children}</div>}

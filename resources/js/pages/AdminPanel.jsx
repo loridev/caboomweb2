@@ -23,7 +23,7 @@ function AdminPanel() {
         <>
             { ctx.isAdmin ?
                 <UserList>
-                    {users.map((user) => <User name={user.name} money={user.money}
+                    {users.map((user) => <User id={user.id} name={user.name} money={user.money}
                                                level={user['indiv_level']} wins={user['multi_wins']}/>)}
                 </UserList> :
                 <h1>ERROR: You must be admin to access the admin panel</h1>

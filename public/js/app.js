@@ -5410,6 +5410,7 @@ function Accordion(props) {
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    onClick: props.onClick,
     className: _styles_Accordion_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].accordion,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: _styles_Accordion_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].item,
@@ -5417,6 +5418,7 @@ function Accordion(props) {
         className: _styles_Accordion_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].title,
         onClick: handleActive,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "highlight",
           children: props.title
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           children: isActive ? '▲' : '▼'
@@ -5485,9 +5487,7 @@ function Button(props) {
     disabled: props.disabled,
     type: props.type,
     className: _Button_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].button,
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-      children: props.children
-    })
+    children: props.children
   });
 }
 
@@ -5525,17 +5525,19 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
-function Input(props) {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
-      _useState2 = _slicedToArray(_useState, 2),
-      valueInput = _useState2[0],
-      setValueInput = _useState2[1];
+var Input = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function (props, ref) {
+  var _React$useState = react__WEBPACK_IMPORTED_MODULE_0__.useState(''),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      valueInput = _React$useState2[0],
+      setValueInput = _React$useState2[1];
 
   var setValue = function setValue(ev) {
     return setValueInput(ev.target.value);
   };
 
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    console.log(ref.current);
+  }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     className: _styles_Input_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].inputContainer,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
@@ -5549,11 +5551,11 @@ function Input(props) {
       onBlur: setValue,
       className: "".concat(_styles_Input_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].input, " ").concat(props.className),
       placeholder: props.placeholder,
-      value: valueInput
+      value: valueInput,
+      ref: ref
     })]
   });
-}
-
+});
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Input);
 
 /***/ }),
@@ -6180,10 +6182,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _UI_Accordion_Accordion__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../UI/Accordion/Accordion */ "./resources/js/UI/Accordion/Accordion.jsx");
-/* harmony import */ var _UI_Input_Input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../UI/Input/Input */ "./resources/js/UI/Input/Input.jsx");
-/* harmony import */ var _UI_Button_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../UI/Button/Button */ "./resources/js/UI/Button/Button.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _UI_Accordion_Accordion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../UI/Accordion/Accordion */ "./resources/js/UI/Accordion/Accordion.jsx");
+/* harmony import */ var _UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../UI/Input/Input */ "./resources/js/UI/Input/Input.jsx");
+/* harmony import */ var _UI_Button_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../UI/Button/Button */ "./resources/js/UI/Button/Button.jsx");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utils_Http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utils/Http */ "./resources/js/utils/Http.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
 
 
 
@@ -6191,31 +6205,92 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function User(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_UI_Accordion_Accordion__WEBPACK_IMPORTED_MODULE_0__["default"], {
+  var moneyRef = (0,react__WEBPACK_IMPORTED_MODULE_4__.useRef)();
+  var indivRef = (0,react__WEBPACK_IMPORTED_MODULE_4__.useRef)();
+  var winsRef = (0,react__WEBPACK_IMPORTED_MODULE_4__.useRef)();
+
+  var handleClick = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(ev) {
+      var reqObj, response;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              if (!(ev.target.localName === 'button')) {
+                _context.next = 16;
+                break;
+              }
+
+              reqObj = {
+                url: '/api/v1/users/' + props.id,
+                method: 'PUT'
+              };
+              debugger;
+              _context.t0 = ev.target.innerHTML;
+              _context.next = _context.t0 === 'Update money' ? 6 : _context.t0 === 'Update level' ? 8 : _context.t0 === 'Update wins' ? 10 : 12;
+              break;
+
+            case 6:
+              reqObj.body = {
+                money: moneyRef.current.value
+              };
+              return _context.abrupt("break", 12);
+
+            case 8:
+              reqObj.body['indiv_level'] = indivRef.current.value;
+              return _context.abrupt("break", 12);
+
+            case 10:
+              reqObj.body['multi_wins'] = winsRef.current.value;
+              return _context.abrupt("break", 12);
+
+            case 12:
+              _context.next = 14;
+              return _utils_Http__WEBPACK_IMPORTED_MODULE_5__["default"].fetchData(reqObj);
+
+            case 14:
+              response = _context.sent;
+              console.log(response);
+
+            case 16:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }));
+
+    return function handleClick(_x) {
+      return _ref.apply(this, arguments);
+    };
+  }();
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_UI_Accordion_Accordion__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    onClick: handleClick,
     title: "".concat(props.name, " \u2192 Money: ").concat(props.money, " | Level: ").concat(props.level, " | Wins: ").concat(props.wins),
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
       className: "horizontal-group",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        id: "money",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        ref: moneyRef,
         placeholder: "Introduce new money amount"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_UI_Button_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        children: "Update"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_UI_Button_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        children: "Update money"
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
       className: "horizontal-group",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        id: "indiv_world",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        ref: indivRef,
         placeholder: "Introduce new individual level (world-level)"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_UI_Button_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        children: "Update"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_UI_Button_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        children: "Update level"
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
       className: "horizontal-group",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        id: "multi",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        ref: winsRef,
         placeholder: "Introduce new wins amount"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_UI_Button_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        children: "Update"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_UI_Button_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        children: "Update wins"
       })]
     })]
   });
@@ -6497,6 +6572,7 @@ function AdminPanel() {
     children: ctx.isAdmin ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_User_UserList__WEBPACK_IMPORTED_MODULE_3__["default"], {
       children: users.map(function (user) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_User_User__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          id: user.id,
           name: user.name,
           money: user.money,
           level: user['indiv_level'],
@@ -12563,7 +12639,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".rjT-1tKHBpXYFAQRzhA8Lg\\=\\= {\n    display: inline-block;\n    border-radius: 4px;\n    background-color: var(--main-color);\n    border: none;\n    color: #FFFFFF;\n    text-align: center;\n    font-size: 1rem;\n    padding: 0.5rem;\n    width: 5rem;\n    height: 2.5rem;\n    cursor: pointer;\n    margin: 5px;\n}\n\n.rjT-1tKHBpXYFAQRzhA8Lg\\=\\=:hover span:after {\n    opacity: 1;\n    right: 0;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".rjT-1tKHBpXYFAQRzhA8Lg\\=\\= {\n    display: inline-block;\n    border-radius: 4px;\n    background-color: var(--main-color);\n    border: none;\n    color: #FFFFFF;\n    text-align: center;\n    font-size: 1rem;\n    padding: 0.5rem;\n    width: 5rem;\n    height: -webkit-fit-content;\n    height: -moz-fit-content;\n    height: fit-content;\n    cursor: pointer;\n    margin: 5px;\n    transition: 0.3s;\n}\n\n.rjT-1tKHBpXYFAQRzhA8Lg\\=\\=:hover {\n    background-color: #7B1976FF;\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"button": "rjT-1tKHBpXYFAQRzhA8Lg=="
