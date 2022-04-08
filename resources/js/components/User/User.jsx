@@ -1,9 +1,9 @@
 import Accordion from "../../UI/Accordion/Accordion";
-import Button from "../../UI/Button/Button";
+import ActionButton from "../../UI/ActionButton/ActionButton";
 
 function User(props) {
     return (
-        <Accordion title={props.name}><div>HOLA</div><Button>HOLA</Button></Accordion>
+        <Accordion title={props.name}><div>HOLA</div><ActionButton>HOLA</ActionButton></Accordion>
     )
 }
 

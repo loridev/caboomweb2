@@ -1,7 +1,7 @@
 import RankList from "../components/Ranking/RankList"
 import Select from "../UI/Select/Select";
 import Form from "../components/Form/Form";
-import Button from "../UI/Button/Button";
+import ActionButton from "../UI/ActionButton/ActionButton";
 import {useContext, useEffect, useRef, useState} from "react";
 import Http from "../utils/Http";
 import RankItem from "../components/Ranking/RankItem";
@@ -198,7 +198,7 @@ function Rankings() {
                     <option value={3}>Level 3</option>
                     <option value={4}>Level 4</option>
                 </Select>
-                <Button disabled={isLoading} type="submit">Refresh</Button>
+                <ActionButton disabled={isLoading} type="submit">Refresh</ActionButton>
             </Form>
             <div className="container">
                 <LoadingSpinner show={isLoading} />
