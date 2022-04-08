@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import Http from "../utils/Http";
 
 const AuthContext = createContext({
     token: '',
@@ -7,7 +8,7 @@ const AuthContext = createContext({
     setToken: () => {},
     setIsAdmin: () => {}
 });
-
+// TODO: LOADING
 export default AuthContext;
 
 export function AuthContextProvider(props) {
@@ -24,9 +25,23 @@ export function AuthContextProvider(props) {
         }
     };
 
+    const checkAdmin = async () => {
+        if (token) {
+            const currUser = await Http.fetchData({url: '/api/v1/auth/current', method: 'POST', token: token});
+            console.log(currUser);
+            if (currUser.status) {
+                setIsAdmin(currUser.data.data['is_admin'] === 1);
+            }
+        }
+    }
+
     useEffect(() => {
         getToken();
     }, []);
+
+    useEffect(async () => {
+        await checkAdmin();
+    }, [token]);
 
     const context = {
         token,

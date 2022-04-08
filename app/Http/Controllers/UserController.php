@@ -69,4 +69,48 @@ class UserController extends Controller
             'message' => 'User logout successfully.'
         ]);
     }
+
+    public function index()
+    {
+        $users = User::all();
+
+        foreach ($users as $user) {
+            $user['rankings'] = $user->rankings;
+        }
+
+        return response()->json(
+            $users,
+            200
+        );
+    }
+
+    public function show(int $id)
+    {
+        $user = User::find($id);
+
+        $user->rankings;
+
+        return response()->json([
+            $user
+        ]);
+    }
+
+    public function update(Request $request, int $id) {
+        $user = User::find($id);
+
+        $user->fill($request->all())->save();
+
+        return response()->json([
+            'message' => 'User updated successfully!',
+            'user' => $user
+        ]);
+    }
+
+    public function destroy(int $id) {
+        $user = User::find($id);
+
+        $user->delete();
+
+        return response()->noContent();
+    }
 }

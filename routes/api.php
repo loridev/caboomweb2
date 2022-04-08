@@ -39,6 +39,8 @@ Route::prefix('/v1')->group(function () {
             Route::get('/current', [RankingController::class, 'getMulti'])->middleware('auth:api');
         });
     });
+
+    Route::apiResource('/users', UserController::class);
 });
 
 

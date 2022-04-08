@@ -9,7 +9,6 @@ import LoadingSpinner from "../UI/LoadingSpinner/LoadingSpinner";
 import AuthContext from "../context/AuthContext";
 
 function Rankings() {
-    const ctx = useContext(AuthContext);
     const [fullData, setFullData] = useState([]);
     const [data, setData] = useState([]);
     const [numPage, setNumPage] = useState(1);

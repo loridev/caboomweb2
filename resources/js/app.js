@@ -4,6 +4,8 @@
  * building robust, powerful web applications using React + Laravel.
  */
 
+import AdminPanel from "./pages/AdminPanel";
+
 require('./bootstrap');
 
 /**
@@ -37,11 +39,11 @@ function App() {
         {
             to: '/rankings',
             text: 'Rankings'
-        },        
+        },
         {
             to: '/shop',
             text: 'Shop'
-        },        
+        },
         {
             to: '/login',
             text: 'Log in'
@@ -86,9 +88,8 @@ if (document.getElementById('root')) {
                             <Route path="/" element={<Home />} />
                             <Route path='/login' element={<Login />} />
                             <Route path='/register' element={<Register />} />
-                            <Route path='/rankings' element={<Rankings />}>
-                                <Route path=':page' element={<RankList />} />
-                            </Route>
+                            <Route path='/rankings' element={<Rankings />} />
+                            <Route path='/admin' element={<AdminPanel />} />
                             <Route path="*" element={<NotFound />} />
                         </Routes>
                     </BrowserRouter>

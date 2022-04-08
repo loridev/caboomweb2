@@ -1,0 +1,24 @@
+.accordion {
+    width: 90vw;
+    margin: 2rem auto;
+}
+
+.item {
+
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+    background-color: var(--background-light);
+}
+
+.content {
+    background-color: var(--background-overlay);
+}
+
+.title, .content {
+    padding: 1rem;
+}
