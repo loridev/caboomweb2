@@ -6150,7 +6150,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _UI_Accordion_Accordion__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../UI/Accordion/Accordion */ "./resources/js/UI/Accordion/Accordion.jsx");
-/* harmony import */ var _UI_ActionButton_ActionButton__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../UI/ActionButton/ActionButton */ "./resources/js/UI/ActionButton/ActionButton.jsx");
+/* harmony import */ var _UI_Input_Input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../UI/Input/Input */ "./resources/js/UI/Input/Input.jsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -6159,11 +6159,31 @@ __webpack_require__.r(__webpack_exports__);
 
 function User(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_UI_Accordion_Accordion__WEBPACK_IMPORTED_MODULE_0__["default"], {
-    title: props.name,
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      children: "HOLA"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_UI_ActionButton_ActionButton__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      children: "HOLA"
+    title: "".concat(props.name, " \u2192 Money: ").concat(props.money, " | Level: ").concat(props.level, " | Wins: ").concat(props.wins),
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "horizontal-group",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        id: "money",
+        placeholder: "Introduce new money amount"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+        children: "Update"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "horizontal-group",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        id: "money",
+        placeholder: "Introduce new money amount"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+        children: "Update"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "horizontal-group",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        id: "money",
+        placeholder: "Introduce new money amount"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+        children: "Update"
+      })]
     })]
   });
 }
@@ -6444,7 +6464,10 @@ function AdminPanel() {
     children: ctx.isAdmin ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_User_UserList__WEBPACK_IMPORTED_MODULE_3__["default"], {
       children: users.map(function (user) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_User_User__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          name: user.name
+          name: user.name,
+          money: user.money,
+          level: user['indiv_level'],
+          wins: user['multi_wins']
         });
       })
     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h1", {
@@ -12450,13 +12473,14 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".xt-XQE7-Xr6HrqgxuyR8mA\\=\\= {\n    width: 90vw;\n    margin: 2rem auto;\n}\n\n.Y1PDHxqOoz24SzbEe9u9xQ\\=\\= {\n\n}\n\n.VhxCdeOT3Wqy7vmu8QJX0Q\\=\\= {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    cursor: pointer;\n    background-color: var(--background-light);\n}\n\n.uJikL3WORpqECUB36pXnHg\\=\\= {\n    background-color: var(--background-overlay);\n}\n\n.VhxCdeOT3Wqy7vmu8QJX0Q\\=\\=, .uJikL3WORpqECUB36pXnHg\\=\\= {\n    padding: 1rem;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".xt-XQE7-Xr6HrqgxuyR8mA\\=\\= {\n    width: 90vw;\n    margin: 2rem auto;\n}\n\n.Y1PDHxqOoz24SzbEe9u9xQ\\=\\= {\n\n}\n\n.VhxCdeOT3Wqy7vmu8QJX0Q\\=\\= {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    cursor: pointer;\n    background-color: var(--background-light);\n}\n\n.uJikL3WORpqECUB36pXnHg\\=\\= {\n    background-color: var(--background-overlay);\n}\n\n.uJikL3WORpqECUB36pXnHg\\=\\= ._0yEfWm2kpXsEz\\+SeYoHLfg\\=\\= {\n    width: 100%;\n}\n\n.uJikL3WORpqECUB36pXnHg\\=\\= div {\n    width: 100%;\n}\n\n.uJikL3WORpqECUB36pXnHg\\=\\= input {\n    width: 90%;\n}\n\n.VhxCdeOT3Wqy7vmu8QJX0Q\\=\\=, .uJikL3WORpqECUB36pXnHg\\=\\= {\n    padding: 1rem;\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"accordion": "xt-XQE7-Xr6HrqgxuyR8mA==",
 	"item": "Y1PDHxqOoz24SzbEe9u9xQ==",
 	"title": "VhxCdeOT3Wqy7vmu8QJX0Q==",
-	"content": "uJikL3WORpqECUB36pXnHg=="
+	"content": "uJikL3WORpqECUB36pXnHg==",
+	"horizontal-group": "_0yEfWm2kpXsEz+SeYoHLfg=="
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
