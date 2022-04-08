@@ -32,6 +32,8 @@
 }
 
 @media (max-width: 648px) {
-    
+    .text {
+        font-size: 3.5rem;
+    }
 }
 
