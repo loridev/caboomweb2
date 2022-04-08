@@ -14,7 +14,11 @@ class UserController extends Controller
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->password)
+            'password' => Hash::make($request->password),
+            'is_admin' => $request->is_admin ? $request->is_admin : false,
+            'money' => $request->money ? $request->money : 0,
+            'indiv_level' => $request->indiv_level ? $request->indiv_level : '1-1',
+            'multi_wins' => $request->multi_wins ? $request->multi_wins : 0,
         ]);
 
         return response()->json([

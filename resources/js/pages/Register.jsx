@@ -26,7 +26,6 @@ function Register() {
                 name: ev.target[0].value,
                 email: ev.target[1].value,
                 password: ev.target[2].value,
-                is_admin: false
             }
         });
 
