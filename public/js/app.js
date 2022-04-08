@@ -6648,8 +6648,8 @@ __webpack_require__.r(__webpack_exports__);
 function Home() {
   /*
   const [src, setSrc] = useState('/videos/mapache.mp4');
-    const mediaQuery = window.matchMedia('(min-width: 648px)');
-    const handleWindowChange = (ev) => {
+   const mediaQuery = window.matchMedia('(min-width: 648px)');
+   const handleWindowChange = (ev) => {
       debugger
       if (ev.matches) {
           console.log('grande');
@@ -12650,7 +12650,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "._484gSQ60gCcJZJifZiFp2A\\=\\= {\r\n    display: inline-block;\r\n    border-radius: 4px;\r\n    background-color: var(--main-color);\r\n    border: none;\r\n    color: #FFFFFF;\r\n    text-align: center;\r\n    font-size: 1.75rem;\r\n    padding: 1.25rem;\r\n    width: 15rem;\r\n    transition: all 0.5s;\r\n    cursor: pointer;\r\n    margin: 5px;\r\n}\r\n\r\n._484gSQ60gCcJZJifZiFp2A\\=\\= span {\r\n    cursor: pointer;\r\n    display: inline-block;\r\n    position: relative;\r\n    transition: 0.5s;\r\n}\r\n\r\n._484gSQ60gCcJZJifZiFp2A\\=\\= span:after {\r\n    content: '\\00bb';\r\n    position: absolute;\r\n    opacity: 0;\r\n    top: 0;\r\n    right: -20px;\r\n    transition: 0.5s;\r\n}\r\n\r\n._484gSQ60gCcJZJifZiFp2A\\=\\=:hover span {\r\n    padding-right: 1.5rem;\r\n}\r\n\r\n._484gSQ60gCcJZJifZiFp2A\\=\\=:hover span:after {\r\n    opacity: 1;\r\n    right: 0;\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "._484gSQ60gCcJZJifZiFp2A\\=\\= {\n    display: inline-block;\n    border-radius: 4px;\n    background-color: var(--main-color);\n    border: none;\n    color: #FFFFFF;\n    text-align: center;\n    font-size: 1.75rem;\n    padding: 1.25rem;\n    width: 15rem;\n    transition: all 0.5s;\n    cursor: pointer;\n    margin: 5px;\n}\n\n._484gSQ60gCcJZJifZiFp2A\\=\\= span {\n    cursor: pointer;\n    display: inline-block;\n    position: relative;\n    transition: 0.5s;\n}\n\n._484gSQ60gCcJZJifZiFp2A\\=\\= span:after {\n    content: '\\00bb';\n    position: absolute;\n    opacity: 0;\n    top: 0;\n    right: -20px;\n    transition: 0.5s;\n}\n\n._484gSQ60gCcJZJifZiFp2A\\=\\=:hover span {\n    padding-right: 1.5rem;\n}\n\n._484gSQ60gCcJZJifZiFp2A\\=\\=:hover span:after {\n    opacity: 1;\n    right: 0;\n}", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"button": "_484gSQ60gCcJZJifZiFp2A=="
@@ -12847,7 +12847,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "._7sovfdBZAuvxyhw536x4vw\\=\\= {\r\n    background-position: center center;\r\n\tbackground-size: cover;\r\n\tbackground-repeat: no-repeat;\r\n    height: 91vh;\r\n    width: 100vw;\r\n    background-color: rgba(0,0,0,0.8);\r\n    filter:brightness(0.5);\r\n}\r\n\r\n.wsj50hmnPQux6DiFdElPIA\\=\\= {\r\n    position: relative;\r\n    display: flex;\r\n}\r\n\r\n.ZI5wjEAtwa90YI\\+Ly1IkKQ\\=\\= {\r\n    position:relative;\r\n    z-index:0;\r\n}\r\n\r\n.Z9ND8itfwqi6x9OsoznmHg\\=\\= {\r\n    position:absolute;\r\n    text-align: center;\r\n    z-index:1;\r\n    width: 100vw;\r\n    align-self: center;\r\n}\r\n\r\n.HBlzEyDO09Ary6iZYKxQLw\\=\\= {\r\n    font-size: 6rem;\r\n    margin-bottom: 10vh;\r\n}\r\n\r\n@media (max-width: 648px) {\r\n    \r\n}\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "._7sovfdBZAuvxyhw536x4vw\\=\\= {\n    background-position: center center;\n\tbackground-size: cover;\n\tbackground-repeat: no-repeat;\n    height: 91vh;\n    width: 100vw;\n    background-color: rgba(0,0,0,0.8);\n    filter:brightness(0.5);\n}\n\n.wsj50hmnPQux6DiFdElPIA\\=\\= {\n    position: relative;\n    display: flex;\n}\n\n.ZI5wjEAtwa90YI\\+Ly1IkKQ\\=\\= {\n    position:relative;\n    z-index:0;\n}\n\n.Z9ND8itfwqi6x9OsoznmHg\\=\\= {\n    position:absolute;\n    text-align: center;\n    z-index:1;\n    width: 100vw;\n    align-self: center;\n}\n\n.HBlzEyDO09Ary6iZYKxQLw\\=\\= {\n    font-size: 6rem;\n    margin-bottom: 10vh;\n}\n\n@media (max-width: 648px) {\n    .HBlzEyDO09Ary6iZYKxQLw\\=\\= {\n        font-size: 3.5rem;\n    }\n}\n\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"background": "_7sovfdBZAuvxyhw536x4vw==",
