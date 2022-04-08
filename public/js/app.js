@@ -5464,6 +5464,37 @@ function ActionButton(props) {
 
 /***/ }),
 
+/***/ "./resources/js/UI/Button/Button.jsx":
+/*!*******************************************!*\
+  !*** ./resources/js/UI/Button/Button.jsx ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Button_module_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Button.module.css */ "./resources/js/UI/Button/Button.module.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+function Button(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+    disabled: props.disabled,
+    type: props.type,
+    className: _Button_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].button,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+      children: props.children
+    })
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Button);
+
+/***/ }),
+
 /***/ "./resources/js/UI/Input/Input.jsx":
 /*!*****************************************!*\
   !*** ./resources/js/UI/Input/Input.jsx ***!
@@ -6151,37 +6182,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _UI_Accordion_Accordion__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../UI/Accordion/Accordion */ "./resources/js/UI/Accordion/Accordion.jsx");
 /* harmony import */ var _UI_Input_Input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../UI/Input/Input */ "./resources/js/UI/Input/Input.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _UI_Button_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../UI/Button/Button */ "./resources/js/UI/Button/Button.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
 
 
 function User(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_UI_Accordion_Accordion__WEBPACK_IMPORTED_MODULE_0__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_UI_Accordion_Accordion__WEBPACK_IMPORTED_MODULE_0__["default"], {
     title: "".concat(props.name, " \u2192 Money: ").concat(props.money, " | Level: ").concat(props.level, " | Wins: ").concat(props.wins),
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: "horizontal-group",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
         id: "money",
         placeholder: "Introduce new money amount"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_UI_Button_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
         children: "Update"
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: "horizontal-group",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
         id: "indiv_world",
         placeholder: "Introduce new individual level (world-level)"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_UI_Button_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
         children: "Update"
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: "horizontal-group",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
         id: "multi",
         placeholder: "Introduce new wins amount"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_UI_Button_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
         children: "Update"
       })]
     })]
@@ -12449,7 +12482,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ":root {\n    --main-color: #AF22A5;\n    --background-color: #222222;\n    --background-light: #444444;\n    --background-overlay: #666666;\n}\n\n* {\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n}\n\nbody {\n    font-family: sans-serif;\n    background-color: var(--background-color);\n    color: white;\n    overflow-x: hidden;\n}\n\n.highlight {\n    color: yellow;\n}\n\na {\n    text-decoration: none;\n    color: white;\n    font-size: 1.2rem;\n    font-weight: bold;\n    text-transform: uppercase;\n    cursor: pointer;\n}\n\n.container {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    max-width: 1024px;\n    margin: 0 auto;\n}\n\n.horizontal-group {\n    display: flex;\n    justify-content: space-evenly;\n}\n\n.hide {\n    display: none;\n}\n\n@media (max-width: 648px) {\n    .container {\n        width: 95vw;\n    }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ":root {\n    --main-color: #AF22A5;\n    --background-color: #222222;\n    --background-light: #444444;\n    --background-overlay: #666666;\n}\n\n* {\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n}\n\nbody {\n    font-family: sans-serif;\n    background-color: var(--background-color);\n    color: white;\n    overflow-x: hidden;\n}\n\n.highlight {\n    color: yellow;\n}\n\na {\n    text-decoration: none;\n    color: white;\n    font-size: 1.2rem;\n    font-weight: bold;\n    text-transform: uppercase;\n    cursor: pointer;\n}\n\n.container {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    max-width: 1024px;\n    margin: 0 auto;\n}\n\n.horizontal-group {\n    display: flex;\n    justify-content: space-evenly;\n    align-items: center;\n}\n\n.hide {\n    display: none;\n}\n\n@media (max-width: 648px) {\n    .container {\n        width: 95vw;\n    }\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -12473,14 +12506,13 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".xt-XQE7-Xr6HrqgxuyR8mA\\=\\= {\n    width: 90vw;\n    margin: 2rem auto;\n}\n\n.Y1PDHxqOoz24SzbEe9u9xQ\\=\\= {\n\n}\n\n.VhxCdeOT3Wqy7vmu8QJX0Q\\=\\= {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    cursor: pointer;\n    background-color: var(--background-light);\n}\n\n.uJikL3WORpqECUB36pXnHg\\=\\= {\n    background-color: var(--background-overlay);\n}\n\n.uJikL3WORpqECUB36pXnHg\\=\\= ._0yEfWm2kpXsEz\\+SeYoHLfg\\=\\= {\n    width: 100%;\n}\n\n.uJikL3WORpqECUB36pXnHg\\=\\= div {\n    width: 100%;\n}\n\n.uJikL3WORpqECUB36pXnHg\\=\\= input {\n    width: 90%;\n}\n\n.VhxCdeOT3Wqy7vmu8QJX0Q\\=\\=, .uJikL3WORpqECUB36pXnHg\\=\\= {\n    padding: 1rem;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".xt-XQE7-Xr6HrqgxuyR8mA\\=\\= {\n    width: 90vw;\n    margin: 2rem auto;\n}\n\n.Y1PDHxqOoz24SzbEe9u9xQ\\=\\= {\n\n}\n\n.VhxCdeOT3Wqy7vmu8QJX0Q\\=\\= {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    cursor: pointer;\n    background-color: var(--background-light);\n}\n\n.uJikL3WORpqECUB36pXnHg\\=\\= {\n    background-color: var(--background-overlay);\n}\n\n.uJikL3WORpqECUB36pXnHg\\=\\= div {\n    width: 100%;\n}\n\n.uJikL3WORpqECUB36pXnHg\\=\\= input {\n    width: 90%;\n}\n\n.VhxCdeOT3Wqy7vmu8QJX0Q\\=\\=, .uJikL3WORpqECUB36pXnHg\\=\\= {\n    padding: 1rem;\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"accordion": "xt-XQE7-Xr6HrqgxuyR8mA==",
 	"item": "Y1PDHxqOoz24SzbEe9u9xQ==",
 	"title": "VhxCdeOT3Wqy7vmu8QJX0Q==",
-	"content": "uJikL3WORpqECUB36pXnHg==",
-	"horizontal-group": "_0yEfWm2kpXsEz+SeYoHLfg=="
+	"content": "uJikL3WORpqECUB36pXnHg=="
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -12508,6 +12540,33 @@ ___CSS_LOADER_EXPORT___.push([module.id, "._484gSQ60gCcJZJifZiFp2A\\=\\= {\r\n  
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"button": "_484gSQ60gCcJZJifZiFp2A=="
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/UI/Button/Button.module.css":
+/*!************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/UI/Button/Button.module.css ***!
+  \************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".rjT-1tKHBpXYFAQRzhA8Lg\\=\\= {\n    display: inline-block;\n    border-radius: 4px;\n    background-color: var(--main-color);\n    border: none;\n    color: #FFFFFF;\n    text-align: center;\n    font-size: 1rem;\n    padding: 0.5rem;\n    width: 5rem;\n    height: 2.5rem;\n    cursor: pointer;\n    margin: 5px;\n}\n\n.rjT-1tKHBpXYFAQRzhA8Lg\\=\\=:hover span:after {\n    opacity: 1;\n    right: 0;\n}\n", ""]);
+// Exports
+___CSS_LOADER_EXPORT___.locals = {
+	"button": "rjT-1tKHBpXYFAQRzhA8Lg=="
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -64382,6 +64441,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_ActionButton_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./resources/js/UI/Button/Button.module.css":
+/*!**************************************************!*\
+  !*** ./resources/js/UI/Button/Button.module.css ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Button_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./Button.module.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/UI/Button/Button.module.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Button_module_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Button_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 

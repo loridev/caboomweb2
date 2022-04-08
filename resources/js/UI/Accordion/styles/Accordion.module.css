@@ -19,10 +19,6 @@
     background-color: var(--background-overlay);
 }
 
-.content .horizontal-group {
-    width: 100%;
-}
-
 .content div {
     width: 100%;
 }

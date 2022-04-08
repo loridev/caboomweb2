@@ -5,9 +5,10 @@
     border: none;
     color: #FFFFFF;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1rem;
     padding: 0.5rem;
-    width: 10rem;
+    width: 5rem;
+    height: 2.5rem;
     cursor: pointer;
     margin: 5px;
 }
