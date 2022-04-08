@@ -9,11 +9,11 @@ function User(props) {
                 <button>Update</button>
             </div>
             <div className="horizontal-group">
-                <Input id="money" placeholder="Introduce new money amount" />
+                <Input id="indiv_world" placeholder="Introduce new individual level (world-level)" />
                 <button>Update</button>
             </div>
             <div className="horizontal-group">
-                <Input id="money" placeholder="Introduce new money amount" />
+                <Input id="multi" placeholder="Introduce new wins amount" />
                 <button>Update</button>
             </div>
         </Accordion>

@@ -6171,16 +6171,16 @@ function User(props) {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "horizontal-group",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        id: "money",
-        placeholder: "Introduce new money amount"
+        id: "indiv_world",
+        placeholder: "Introduce new individual level (world-level)"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
         children: "Update"
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "horizontal-group",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        id: "money",
-        placeholder: "Introduce new money amount"
+        id: "multi",
+        placeholder: "Introduce new wins amount"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
         children: "Update"
       })]
