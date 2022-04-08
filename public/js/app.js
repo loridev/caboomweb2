@@ -6189,12 +6189,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _UI_Button_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../UI/Button/Button */ "./resources/js/UI/Button/Button.jsx");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _utils_Http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utils/Http */ "./resources/js/utils/Http.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _UI_LoadingSpinner_LoadingSpinner__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../UI/LoadingSpinner/LoadingSpinner */ "./resources/js/UI/LoadingSpinner/LoadingSpinner.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -6208,6 +6222,11 @@ function User(props) {
   var moneyRef = (0,react__WEBPACK_IMPORTED_MODULE_4__.useRef)();
   var indivRef = (0,react__WEBPACK_IMPORTED_MODULE_4__.useRef)();
   var winsRef = (0,react__WEBPACK_IMPORTED_MODULE_4__.useRef)();
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      isLoading = _useState2[0],
+      setIsLoading = _useState2[1];
 
   var handleClick = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(ev) {
@@ -6265,31 +6284,31 @@ function User(props) {
     };
   }();
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_UI_Accordion_Accordion__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_UI_Accordion_Accordion__WEBPACK_IMPORTED_MODULE_1__["default"], {
     onClick: handleClick,
     title: "".concat(props.name, " \u2192 Money: ").concat(props.money, " | Level: ").concat(props.level, " | Wins: ").concat(props.wins),
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
       className: "horizontal-group",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
         ref: moneyRef,
         placeholder: "Introduce new money amount"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_UI_Button_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_UI_Button_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
         children: "Update money"
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
       className: "horizontal-group",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
         ref: indivRef,
         placeholder: "Introduce new individual level (world-level)"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_UI_Button_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_UI_Button_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
         children: "Update level"
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
       className: "horizontal-group",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_2__["default"], {
         ref: winsRef,
         placeholder: "Introduce new wins amount"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_UI_Button_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_UI_Button_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
         children: "Update wins"
       })]
     })]
@@ -6364,7 +6383,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var AuthContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_1__.createContext)({
   token: '',
-  isAdmin: false,
+  isAdmin: null,
   getToken: function getToken() {},
   setToken: function setToken() {},
   setIsAdmin: function setIsAdmin() {}
@@ -6377,7 +6396,7 @@ function AuthContextProvider(props) {
       token = _useState2[0],
       setToken = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null),
       _useState4 = _slicedToArray(_useState3, 2),
       isAdmin = _useState4[0],
       setIsAdmin = _useState4[1];
@@ -6483,7 +6502,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_User_UserList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/User/UserList */ "./resources/js/components/User/UserList.jsx");
 /* harmony import */ var _components_User_User__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/User/User */ "./resources/js/components/User/User.jsx");
 /* harmony import */ var _utils_Http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/Http */ "./resources/js/utils/Http.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _UI_LoadingSpinner_LoadingSpinner__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../UI/LoadingSpinner/LoadingSpinner */ "./resources/js/UI/LoadingSpinner/LoadingSpinner.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -6501,6 +6521,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -6530,15 +6551,15 @@ function AdminPanel() {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              _context.next = 2;
+              setIsLoading(true);
+              _context.next = 3;
               return _utils_Http__WEBPACK_IMPORTED_MODULE_5__["default"].fetchData({
                 url: '/api/v1/users'
               });
 
-            case 2:
+            case 3:
               response = _context.sent;
               setUsers(response.data);
-              console.log(response);
 
             case 5:
             case "end":
@@ -6552,6 +6573,32 @@ function AdminPanel() {
       return _ref.apply(this, arguments);
     };
   }();
+
+  var loadDom = function loadDom() {
+    if (isLoading || ctx.isAdmin === null) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_UI_LoadingSpinner_LoadingSpinner__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        show: isLoading
+      });
+    } else {
+      if (!ctx.isAdmin) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h1", {
+          children: "ERROR: You must be admin to access the admin panel"
+        });
+      } else {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_User_UserList__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          children: users.map(function (user) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_User_User__WEBPACK_IMPORTED_MODULE_4__["default"], {
+              id: user.id,
+              name: user.name,
+              money: user.money,
+              level: user['indiv_level'],
+              wins: user['multi_wins']
+            });
+          })
+        });
+      }
+    }
+  };
 
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
@@ -6568,20 +6615,11 @@ function AdminPanel() {
       }
     }, _callee2);
   })), []);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
-    children: ctx.isAdmin ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_User_UserList__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      children: users.map(function (user) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_User_User__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          id: user.id,
-          name: user.name,
-          money: user.money,
-          level: user['indiv_level'],
-          wins: user['multi_wins']
-        });
-      })
-    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h1", {
-      children: "ERROR: You must be admin to access the admin panel"
-    })
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    setIsLoading(ctx.isAdmin === null);
+  }, [ctx.isAdmin]);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+    children: loadDom()
   });
 }
 
@@ -12582,7 +12620,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".xt-XQE7-Xr6HrqgxuyR8mA\\=\\= {\n    width: 90vw;\n    margin: 2rem auto;\n}\n\n.Y1PDHxqOoz24SzbEe9u9xQ\\=\\= {\n\n}\n\n.VhxCdeOT3Wqy7vmu8QJX0Q\\=\\= {\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    cursor: pointer;\n    background-color: var(--background-light);\n}\n\n.uJikL3WORpqECUB36pXnHg\\=\\= {\n    background-color: var(--background-overlay);\n}\n\n.uJikL3WORpqECUB36pXnHg\\=\\= div {\n    width: 100%;\n}\n\n.uJikL3WORpqECUB36pXnHg\\=\\= input {\n    width: 90%;\n}\n\n.VhxCdeOT3Wqy7vmu8QJX0Q\\=\\=, .uJikL3WORpqECUB36pXnHg\\=\\= {\n    padding: 1rem;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".xt-XQE7-Xr6HrqgxuyR8mA\\=\\= {\n    width: 90vw;\n    margin: 2rem auto;\n}\n\n.Y1PDHxqOoz24SzbEe9u9xQ\\=\\= {\n}\n\n.VhxCdeOT3Wqy7vmu8QJX0Q\\=\\= {\n    border-radius: 4px 4px 0 0;\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    cursor: pointer;\n    background-color: var(--background-light);\n}\n\n.uJikL3WORpqECUB36pXnHg\\=\\= {\n    border-radius: 0 0 4px 4px;\n    background-color: var(--background-overlay);\n}\n\n.uJikL3WORpqECUB36pXnHg\\=\\= div {\n    width: 100%;\n}\n\n.uJikL3WORpqECUB36pXnHg\\=\\= input {\n    width: 90%;\n}\n\n.VhxCdeOT3Wqy7vmu8QJX0Q\\=\\=, .uJikL3WORpqECUB36pXnHg\\=\\= {\n    padding: 1rem;\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"accordion": "xt-XQE7-Xr6HrqgxuyR8mA==",

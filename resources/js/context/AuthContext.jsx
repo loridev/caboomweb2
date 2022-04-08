@@ -3,7 +3,7 @@ import Http from "../utils/Http";
 
 const AuthContext = createContext({
     token: '',
-    isAdmin: false,
+    isAdmin: null,
     getToken: () => {},
     setToken: () => {},
     setIsAdmin: () => {}
@@ -13,7 +13,7 @@ export default AuthContext;
 
 export function AuthContextProvider(props) {
     const [token, setToken] = useState('');
-    const [isAdmin, setIsAdmin] = useState(false);
+    const [isAdmin, setIsAdmin] = useState(null);
 
     const getToken = () => {
         try {

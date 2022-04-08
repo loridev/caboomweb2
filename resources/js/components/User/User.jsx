@@ -1,13 +1,15 @@
 import Accordion from "../../UI/Accordion/Accordion";
 import Input from "../../UI/Input/Input";
 import Button from "../../UI/Button/Button";
-import {useRef} from "react";
+import {useRef, useState} from "react";
 import Http from "../../utils/Http";
+import LoadingSpinner from "../../UI/LoadingSpinner/LoadingSpinner";
 
 function User(props) {
     const moneyRef = useRef();
     const indivRef = useRef();
     const winsRef = useRef();
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleClick = async (ev) => {
         if (ev.target.localName === 'button') {
