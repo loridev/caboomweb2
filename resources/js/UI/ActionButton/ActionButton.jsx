@@ -1,10 +1,10 @@
-import clases from './Button.module.css';
+import clases from './ActionButton.module.css';
 
-function Button(props) {
+function ActionButton(props) {
 
     return (
         <button disabled={props.disabled} type={props.type} className={clases.button}><span>{props.children}</span></button>
     );
 }
 
-export default Button;
+export default ActionButton;

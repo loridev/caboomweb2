@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Form from "../components/Form/Form";
-import Button from "../UI/Button/Button";
+import ActionButton from "../UI/ActionButton/ActionButton";
 import Input from "../UI/Input/Input";
 import LoadingSpinner from "../UI/LoadingSpinner/LoadingSpinner";
 import Http from './../utils/Http';
@@ -41,7 +41,7 @@ function Register() {
                 <Input id="email" label="Email: " />
                 <Input type="password" id="pwd" label="Password: " />
                 <Input type="password" id="repeat" label="Repeat password: " />
-                <Button type="submit">Submit</Button>
+                <ActionButton type="submit">Submit</ActionButton>
             </Form>
             <LoadingSpinner show={isLoading} />
             <p>

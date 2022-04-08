@@ -1,5 +1,5 @@
 import Form from "../components/Form/Form";
-import Button from "../UI/Button/Button";
+import ActionButton from "../UI/ActionButton/ActionButton";
 import Input from "../UI/Input/Input";
 import { Link, useNavigate } from 'react-router-dom';
 import { useContext, useState } from "react";
@@ -46,7 +46,7 @@ function Login() {
             <Form onSubmit={logIn}>
                 <Input id="user" label="Username: " />
                 <Input id="pwd" label="Password: " />
-                <Button type="submit">Submit</Button>
+                <ActionButton type="submit">Submit</ActionButton>
             </Form>
             <LoadingSpinner show={isLoading} />
             <p>

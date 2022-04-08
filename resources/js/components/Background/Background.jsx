@@ -1,4 +1,4 @@
-import Button from '../../UI/Button/Button';
+import ActionButton from '../../UI/ActionButton/ActionButton';
 import Video from '../../UI/Video/Video';
 import clases from './styles/Background.module.css';
 
@@ -8,7 +8,7 @@ function Background(props) {
             <Video className={`${clases.video} ${clases.background}`}/>
             <div className={clases.containerOver}>
                 <h1 className={clases.text}>{props.text}</h1>
-                <Button>{props.buttonText}</Button>
+                <ActionButton>{props.buttonText}</ActionButton>
             </div>
         </div>
     );
