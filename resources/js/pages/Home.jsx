@@ -25,7 +25,7 @@ function Home() {
     }, [src]);
     */
     return (
-        <Background text="CARLOS EL BOMBAS" buttonText="Try it Now"/>
+        <Background text="CARLOS EL BOMBAS" buttonText="Try it now"/>
     );
 }
 

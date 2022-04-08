@@ -5,9 +5,9 @@
     border: none;
     color: #FFFFFF;
     text-align: center;
-    font-size: 28px;
-    padding: 20px;
-    width: 200px;
+    font-size: 1.75rem;
+    padding: 1.25rem;
+    width: 25vw;
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
@@ -30,7 +30,7 @@
 }
 
 .button:hover span {
-    padding-right: 25px;
+    padding-right: 1.5rem;
 }
 
 .button:hover span:after {
