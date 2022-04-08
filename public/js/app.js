@@ -5533,7 +5533,7 @@ function NavLink(props) {
             case 0:
               _context.next = 2;
               return _utils_Http__WEBPACK_IMPORTED_MODULE_2__["default"].fetchData({
-                url: '/api/v1/users/logout',
+                url: '/api/v1/auth/logout',
                 method: 'POST',
                 token: ctx.token
               });
@@ -6267,10 +6267,10 @@ function Login() {
               setIsLoading(true);
               _context.next = 4;
               return _utils_Http__WEBPACK_IMPORTED_MODULE_5__["default"].fetchData({
-                url: '/api/v1/users/login',
+                url: '/api/v1/auth/login',
                 method: 'POST',
                 body: {
-                  username: ev.target[0].value,
+                  name: ev.target[0].value,
                   password: ev.target[1].value
                 }
               });
@@ -6485,14 +6485,14 @@ function Rankings() {
     return Array.from(data).map(function (rank) {
       if (rank.user) {
         return {
-          username: rank.user.username,
+          username: rank.user.name,
           score: rank.time,
           currentUser: rank.current
         };
       }
 
       return {
-        username: rank.username,
+        username: rank.name,
         score: rank['multi_wins'],
         currentUser: rank.current
       };
@@ -6919,10 +6919,10 @@ function Register() {
 
               _context.next = 5;
               return _utils_Http__WEBPACK_IMPORTED_MODULE_6__["default"].fetchData({
-                url: '/api/v1/users/register',
+                url: '/api/v1/auth/register',
                 method: 'POST',
                 body: {
-                  username: ev.target[0].value,
+                  name: ev.target[0].value,
                   email: ev.target[1].value,
                   password: ev.target[2].value,
                   is_admin: false
@@ -7016,6 +7016,7 @@ var Http = {
               return fetch(conf.url, {
                 method: conf.method,
                 headers: {
+                  'Accept': 'application/json',
                   'Content-type': 'application/json',
                   Authorization: "Bearer ".concat(conf.token)
                 },

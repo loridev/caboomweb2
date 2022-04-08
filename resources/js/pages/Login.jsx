@@ -18,10 +18,10 @@ function Login() {
         setIsLoading(true);
 
         const responseFromApi = await Http.fetchData({
-            url: '/api/v1/users/login',
+            url: '/api/v1/auth/login',
             method: 'POST',
             body: {
-                username: ev.target[0].value,
+                name: ev.target[0].value,
                 password: ev.target[1].value,
             },
         });

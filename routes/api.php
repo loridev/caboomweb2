@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RankingController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -27,13 +28,15 @@ Route::prefix('/v1')->group(function () {
     });
 
     Route::prefix('/rankings')->group(function () {
+        Route::post('/', [RankingController::class, 'store']);
+
         Route::prefix('/single')->group(function () {
-            Route::get('/', [[RankingController::class, 'getIndiv']])->middleware('auth:api');
-            Route::get('/current', [RankingController::class, 'getIndiv']);
+            Route::get('/', [RankingController::class, 'getIndiv']);
+            Route::get('/current', [RankingController::class, 'getIndiv'])->middleware('auth:api');
         });
         Route::prefix('/multi')->group(function () {
-            Route::get('/', [[RankingController::class, 'getMulti']])->middleware('auth:api');
-            Route::get('/current', [RankingController::class, 'getMulti']);
+            Route::get('/', [RankingController::class, 'getMulti']);
+            Route::get('/current', [RankingController::class, 'getMulti'])->middleware('auth:api');
         });
     });
 });

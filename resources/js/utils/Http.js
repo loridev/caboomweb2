@@ -4,6 +4,7 @@ const Http = {
             const response = await fetch(conf.url, {
                 method: conf.method,
                 headers:  {
+                    'Accept': 'application/json',
                     'Content-type': 'application/json',
                     Authorization: `Bearer ${conf.token}`
                 },

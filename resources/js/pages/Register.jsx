@@ -20,10 +20,10 @@ function Register() {
         }
 
         const responseFromApi = await Http.fetchData({
-            url: '/api/v1/users/register',
+            url: '/api/v1/auth/register',
             method: 'POST',
             body: {
-                username: ev.target[0].value,
+                name: ev.target[0].value,
                 email: ev.target[1].value,
                 password: ev.target[2].value,
                 is_admin: false

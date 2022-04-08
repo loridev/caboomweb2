@@ -10,7 +10,7 @@ function NavLink(props) {
 
     const logout = async () => {
         const response = await Http.fetchData({
-            url: '/api/v1/users/logout',
+            url: '/api/v1/auth/logout',
             method: 'POST',
             token: ctx.token,
         })

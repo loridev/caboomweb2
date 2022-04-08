@@ -49,13 +49,13 @@ function Rankings() {
         return Array.from(data).map((rank) => {
             if (rank.user) {
                 return {
-                    username: rank.user.username,
+                    username: rank.user.name,
                     score: rank.time,
                     currentUser: rank.current,
                 };
             }
             return {
-                username: rank.username,
+                username: rank.name,
                 score: rank['multi_wins'],
                 currentUser: rank.current
             }

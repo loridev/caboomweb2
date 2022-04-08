@@ -15,7 +15,14 @@ return new class extends Migration
     {
         Schema::create('rankings', function (Blueprint $table) {
             $table->id();
+            $table->integer('world_num');
+            $table->integer('level_num');
+            $table->integer('time');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')
+                ->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
