@@ -53,7 +53,7 @@
         height: 350px;
         position: absolute;
         top: 80px;
-        right: -100%;
+        right: 100%;
         opacity: 0;
         transition: all 0.5s ease;
         flex-direction: column;

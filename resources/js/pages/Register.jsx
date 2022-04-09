@@ -5,6 +5,7 @@ import ActionButton from "../UI/ActionButton/ActionButton";
 import Input from "../UI/Input/Input";
 import LoadingSpinner from "../UI/LoadingSpinner/LoadingSpinner";
 import Http from './../utils/Http';
+import {toast} from "react-toastify";
 
 function Register() {
     const navigate = useNavigate();
@@ -15,10 +16,6 @@ function Register() {
 
         setIsLoading(true);
 
-        if (ev.target[2].value !== ev.target[3].value) {
-            // TOAST
-        }
-
         const responseFromApi = await Http.fetchData({
             url: '/api/v1/auth/register',
             method: 'POST',
@@ -26,8 +23,17 @@ function Register() {
                 name: ev.target[0].value,
                 email: ev.target[1].value,
                 password: ev.target[2].value,
+                confirmPassword: ev.target[3].value
             }
         });
+
+        if (!responseFromApi.status) {
+            Object.keys(responseFromApi.data.errors).forEach((k) => {
+                responseFromApi.data.errors[k].forEach((error) => {
+                    toast.error(error);
+                });
+            });
+        }
 
         console.log(responseFromApi);
 
@@ -37,10 +43,10 @@ function Register() {
     return (
         <div className="container">
             <Form onSubmit={register}>
-                <Input id="user" label="Username: " />
-                <Input id="email" label="Email: " />
-                <Input type="password" id="pwd" label="Password: " />
-                <Input type="password" id="repeat" label="Repeat password: " />
+                <Input id="user" label="Name: " description="3 characters minimum, 12 characters maximum, no symbols allowed"/>
+                <Input id="email" label="Email: " description="example@example.com"/>
+                <Input type="password" id="pwd" label="Password: " description="8 characters, 1 uppercase, 1 lowercase, 1 number at least"/>
+                <Input type="password" id="repeat" label="Repeat password: " description="Repeat the password value" />
                 <ActionButton type="submit">Submit</ActionButton>
             </Form>
             <LoadingSpinner show={isLoading} />

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\RankingController;
 use App\Http\Controllers\UserController;
+use App\Http\Middleware\_ValidateRegister;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,7 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('/v1')->group(function () {
     Route::prefix('/auth')->group(function () {
-        Route::post('/register', [UserController::class, 'register']);
+        Route::post('/register', [UserController::class, 'register'])
+            ->middleware(_ValidateRegister::class);
         Route::post('/login', [UserController::class, 'login']);
 
         Route::middleware('auth:api')->group(function () {

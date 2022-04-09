@@ -10,18 +10,17 @@ function AdminPanel() {
     const ctx = useContext(AuthContext);
 
     const loadUsers = async () => {
-        setIsLoading(true);
         const response = await Http.fetchData({url: '/api/v1/users'});
         setUsers(response.data);
     }
 
     const loadDom = () => {
-        if (isLoading || ctx.isAdmin === null) {
+        if ((isLoading || ctx.isAdmin === null) && localStorage.getItem('apitoken') !== null) {
             return (
                 <LoadingSpinner show={isLoading} />
             );
         } else {
-            if (!ctx.isAdmin) {
+            if (!ctx.isAdmin || !localStorage.getItem('apitoken')) {
                 return (
                     <h1>ERROR: You must be admin to access the admin panel</h1>
                 );
@@ -37,11 +36,12 @@ function AdminPanel() {
     }
 
     useEffect(async () => {
+        setIsLoading(true);
         await loadUsers();
     }, []);
 
     useEffect(() => {
-        setIsLoading(ctx.isAdmin === null);
+        setIsLoading(ctx.isAdmin === null && localStorage.getItem('apitoken') !== null);
     }, [ctx.isAdmin]);
 
     return (

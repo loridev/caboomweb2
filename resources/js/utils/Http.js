@@ -9,20 +9,22 @@ const Http = {
                     Authorization: `Bearer ${conf.token}`
                 },
 
-                body: JSON.stringify(conf.body),
+                body: JSON.stringify(conf.body) || {},
             });
 
             //conf.token ? headers.Authorization = `Bearer ${conf.token}`: '';
 
             const responseJson = await response.json();
 
+            console.log(response.status);
+
             if (!response.ok) {
-                return { status: false, errors: responseJson.errors };
+                return { status: false, data: responseJson };
             }
 
             return { status: true, data: responseJson };
         } catch (err) {
-            return { status: false, error: err.message };
+            return { status: false, data: err.message };
         }
     }
 }

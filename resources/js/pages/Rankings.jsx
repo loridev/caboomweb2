@@ -203,6 +203,11 @@ function Rankings() {
             <div className="container">
                 <LoadingSpinner show={isLoading} />
                 {
+                    !isLoading && parseRankings().length === 0 ? (
+                        <><h3>No rankings found for these filters!</h3><br/></>
+                    ) : null
+                }
+                {
                     !isLoading ? (
                         <RankList mode={mode}>
                             {parseRankings().map((ranking, i) => (

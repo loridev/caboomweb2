@@ -5,7 +5,7 @@
     border-left-color: transparent;
     border-right-color: transparent;
     border-radius: 100%;
-    margin: 1rem;
+    margin: 1rem auto;
     animation: rotation 3s ease-in-out infinite;
 }
 

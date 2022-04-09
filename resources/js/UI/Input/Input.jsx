@@ -1,14 +1,10 @@
-import React, {useEffect} from "react";
+import React, {forwardRef, useState} from "react";
 import classes from './styles/Input.module.css';
 
-const Input = React.forwardRef((props, ref) => {
-    const [valueInput, setValueInput] = React.useState('');
+const Input = forwardRef((props, ref) => {
+    const [valueInput, setValueInput] = useState('');
 
     const setValue = (ev) => setValueInput(ev.target.value);
-
-    useEffect(() => {
-        console.log(ref.current);
-    }, [])
 
     return (
         <div className={classes.inputContainer}>
@@ -24,6 +20,7 @@ const Input = React.forwardRef((props, ref) => {
                 value={valueInput}
                 ref={ref}
             />
+            <small>{props.description}</small>
         </div>
 
     );

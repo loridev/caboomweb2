@@ -6,6 +6,7 @@ import { useContext, useState } from "react";
 import Http from "../utils/Http";
 import LoadingSpinner from "../UI/LoadingSpinner/LoadingSpinner";
 import AuthContext from "../context/AuthContext";
+import {toast} from "react-toastify";
 
 function Login() {
     const [isLoading, setIsLoading] = useState(false);
@@ -32,19 +33,21 @@ function Login() {
             ctx.setIsAdmin(responseFromApi.data.user['is_admin'] === 1);
 
 
-            setIsLoading(false);
 
 
             navigate('/');
         } else {
-            // TOAST
+            toast.warn('Username or password not correct!');
         }
+
+
+        setIsLoading(false);
     };
 
     return (
         <div className="container">
             <Form onSubmit={logIn}>
-                <Input id="user" label="Username: " />
+                <Input id="user" label="Name: " />
                 <Input id="pwd" label="Password: " />
                 <ActionButton type="submit">Submit</ActionButton>
             </Form>

@@ -21,14 +21,16 @@ import { render } from 'react-dom';
 import React, { useContext } from 'react';
 import Navbar from './UI/Navbar/Navbar';
 import NavLink from './UI/Navbar/NavLink';
-import css from './../css/app.css';
+import './../css/app.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NotFound from './pages/NotFound';
 import Login from './pages/Login';
 import Rankings from './pages/Rankings';
-import RankList from './components/Ranking/RankList';
 import Register from './pages/Register';
 import AuthContext, { AuthContextProvider } from './context/AuthContext';
+import Shop from "./pages/Shop";
+import {ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
     const LINKS = [
@@ -69,9 +71,12 @@ function App() {
     }
 
     return(
-        <Navbar>
-            {LINKS.map((link) => <NavLink to={link.to} text={link.text} key={link.text} />)}
-        </Navbar>
+        <>
+            <Navbar>
+                {LINKS.map((link) => <NavLink to={link.to} text={link.text} key={link.text} />)}
+            </Navbar>
+        </>
+
     );
 }
 
@@ -81,6 +86,18 @@ if (document.getElementById('root')) {
     render(
         (
             <React.StrictMode>
+                <ToastContainer
+                    position="top-center"
+                    autoClose={3000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="dark"
+                />
                 <AuthContextProvider>
                     <BrowserRouter>
                         <App />
@@ -89,6 +106,7 @@ if (document.getElementById('root')) {
                             <Route path='/login' element={<Login />} />
                             <Route path='/register' element={<Register />} />
                             <Route path='/rankings' element={<Rankings />} />
+                            <Route path='/shop' element={<Shop />} />
                             <Route path='/admin' element={<AdminPanel />} />
                             <Route path="*" element={<NotFound />} />
                         </Routes>
