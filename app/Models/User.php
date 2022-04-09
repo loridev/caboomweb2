@@ -44,4 +44,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Ranking::class, 'user_id', 'id');
     }
+
+    public function items()
+    {
+        return $this->belongsToMany(Item::class, 'items_users', 'user_id', 'item_id');
+    }
 }

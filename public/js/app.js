@@ -6613,7 +6613,8 @@ function AdminPanel() {
             case 0:
               _context.next = 2;
               return _utils_Http__WEBPACK_IMPORTED_MODULE_5__["default"].fetchData({
-                url: '/api/v1/users'
+                url: '/api/v1/users',
+                method: 'GET'
               });
 
             case 2:
@@ -7593,14 +7594,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 var Http = {
   fetchData: function () {
     var _fetchData = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(conf) {
-      var response, responseJson;
+      var reqObj, response, responseJson;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
               _context.prev = 0;
-              _context.next = 3;
-              return fetch(conf.url, {
+              reqObj = {
                 method: conf.method,
                 headers: {
                   'Accept': 'application/json',
@@ -7608,19 +7608,22 @@ var Http = {
                   Authorization: "Bearer ".concat(conf.token)
                 },
                 body: JSON.stringify(conf.body) || {}
-              });
+              };
+              if (reqObj.method === 'GET') delete reqObj.body;
+              _context.next = 5;
+              return fetch(conf.url, reqObj);
 
-            case 3:
+            case 5:
               response = _context.sent;
-              _context.next = 6;
+              _context.next = 8;
               return response.json();
 
-            case 6:
+            case 8:
               responseJson = _context.sent;
               console.log(response.status);
 
               if (response.ok) {
-                _context.next = 10;
+                _context.next = 12;
                 break;
               }
 
@@ -7629,26 +7632,26 @@ var Http = {
                 data: responseJson
               });
 
-            case 10:
+            case 12:
               return _context.abrupt("return", {
                 status: true,
                 data: responseJson
               });
 
-            case 13:
-              _context.prev = 13;
+            case 15:
+              _context.prev = 15;
               _context.t0 = _context["catch"](0);
               return _context.abrupt("return", {
                 status: false,
                 data: _context.t0.message
               });
 
-            case 16:
+            case 18:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, null, [[0, 13]]);
+      }, _callee, null, [[0, 15]]);
     }));
 
     function fetchData(_x) {

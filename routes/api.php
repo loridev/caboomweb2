@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ItemController;
+use App\Http\Controllers\ItemUserController;
 use App\Http\Controllers\RankingController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\_ValidateRegister;
@@ -42,7 +44,13 @@ Route::prefix('/v1')->group(function () {
         });
     });
 
+    Route::prefix('/users')->group(function () {
+        Route::post('/additem', [ItemUserController::class, 'addItemToUser'])->middleware('auth:api');
+    });
+
+
     Route::apiResource('/users', UserController::class);
+    Route::apiResource('/items', ItemController::class);
 });
 
 

@@ -10,7 +10,7 @@ function AdminPanel() {
     const ctx = useContext(AuthContext);
 
     const loadUsers = async () => {
-        const response = await Http.fetchData({url: '/api/v1/users'});
+        const response = await Http.fetchData({url: '/api/v1/users', method: 'GET'});
         setUsers(response.data);
     }
 

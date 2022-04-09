@@ -1,7 +1,7 @@
 const Http = {
     fetchData: async (conf) => {
         try {
-            const response = await fetch(conf.url, {
+            const reqObj = {
                 method: conf.method,
                 headers:  {
                     'Accept': 'application/json',
@@ -10,7 +10,11 @@ const Http = {
                 },
 
                 body: JSON.stringify(conf.body) || {},
-            });
+            }
+
+            if (reqObj.method === 'GET') delete reqObj.body;
+
+                const response = await fetch(conf.url, reqObj);
 
             //conf.token ? headers.Authorization = `Bearer ${conf.token}`: '';
 
