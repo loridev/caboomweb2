@@ -6855,7 +6855,8 @@ function Login() {
         label: "Name: "
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_3__["default"], {
         id: "pwd",
-        label: "Password: "
+        label: "Password: ",
+        type: "password"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_UI_ActionButton_ActionButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
         type: "submit",
         children: "Submit"

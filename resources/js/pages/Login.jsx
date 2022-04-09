@@ -48,7 +48,7 @@ function Login() {
         <div className="container">
             <Form onSubmit={logIn}>
                 <Input id="user" label="Name: " />
-                <Input id="pwd" label="Password: " />
+                <Input id="pwd" label="Password: " type="password" />
                 <ActionButton type="submit">Submit</ActionButton>
             </Form>
             <LoadingSpinner show={isLoading} />
