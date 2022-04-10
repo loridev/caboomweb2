@@ -88,7 +88,7 @@ if (document.getElementById('root')) {
             <React.StrictMode>
                 <ToastContainer
                     position="top-center"
-                    autoClose={3000}
+                    autoClose={2000}
                     hideProgressBar={false}
                     newestOnTop={false}
                     closeOnClick

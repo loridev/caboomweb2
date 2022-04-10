@@ -1,12 +1,11 @@
 .card {
     overflow: hidden;
-    box-shadow: 0 2px 20px var(--background-light);
     border-radius: 4px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
-    transition: transform 200ms ease-in;
+    transition: box-shadow 200ms ease-in;
 }
 
 .img {
@@ -27,6 +26,10 @@
     padding: 1rem;
     margin: 1rem;
     width: 87%;
+}
+
+.card:hover {
+    box-shadow: 0 2px 20px var(--background-light);
 }
 
 .card:hover button {

@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\User;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -29,6 +30,14 @@ class _ValidateRegister
                 'success' => false,
                 'message' => 'Wrong input data!',
                 'errors' => $validator->errors()
+            ], 400);
+        }
+
+        if (User::query()->where('email', $request->email)->orWhere('name', $request->name)) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Wrong input data!',
+                'errors' => ['repeatedField' => ['User with that name or email already exists!']]
             ], 400);
         }
 

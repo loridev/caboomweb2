@@ -1,5 +1,5 @@
 .common {
-    background-color: var(--background-color);
+    background-color: var(--background-medium);
 }
 
 .rare {
@@ -10,4 +10,19 @@
 .legendary {
     background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
     radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+}
+
+.cointainer {
+    padding-top: 2rem;
+    padding-left: 2rem;
+    display: flex;
+}
+
+.coin {
+    width: 24px;
+    height: 24px;
+}
+
+.cointainer span {
+    margin-left: 0.5rem;
 }

@@ -3,6 +3,7 @@ import classes from './styles/NavLink.module.css';
 import Http from './../../utils/Http';
 import { useContext } from 'react';
 import AuthContext from './../../context/AuthContext';
+import {toast} from "react-toastify";
 
 // TODO : FUNCION QUE LLAMA A LA API EN UN ONCLICK DE UN DIV SI PROPS.TEXT ES LOG OUT
 function NavLink(props) {
@@ -16,9 +17,12 @@ function NavLink(props) {
         })
 
         if (response.status) {
+            toast.success('You have logged out successfully. See you later!', {autoClose: 1000});
             localStorage.removeItem('apitoken');
             ctx.setToken(null);
-            location.reload();
+            setTimeout(() => location.reload(), 1000);
+        } else {
+            toast.error('Something went wrong when trying to log out.');
         }
     };
 

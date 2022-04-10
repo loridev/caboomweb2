@@ -4,6 +4,7 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ItemUserController;
 use App\Http\Controllers\RankingController;
 use App\Http\Controllers\UserController;
+use App\Http\Middleware\_CheckMoney;
 use App\Http\Middleware\_ValidateRegister;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -45,7 +46,8 @@ Route::prefix('/v1')->group(function () {
     });
 
     Route::prefix('/users')->group(function () {
-        Route::post('/additem', [ItemUserController::class, 'addItemToUser'])->middleware('auth:api');
+        Route::post('/additem', [ItemUserController::class, 'addItemToUser'])
+            ->middleware('auth:api')->middleware(_CheckMoney::class);
     });
 
     Route::prefix('/itemusers')->group(function () {

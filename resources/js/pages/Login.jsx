@@ -27,6 +27,7 @@ function Login() {
             },
         });
         if (responseFromApi.status) {
+            toast.success('User logged successfully! Welcome back ' + responseFromApi.data.user.name + '!');
             localStorage.setItem('apitoken', responseFromApi.data.token);
 
             ctx.setToken(responseFromApi.data.token);
@@ -35,7 +36,7 @@ function Login() {
 
 
 
-            navigate('/');
+            navigate(-1);
         } else {
             toast.warn('Username or password not correct!');
         }
@@ -49,7 +50,7 @@ function Login() {
             <Form onSubmit={logIn}>
                 <Input id="user" label="Name: " />
                 <Input id="pwd" label="Password: " type="password" />
-                <ActionButton type="submit">Submit</ActionButton>
+                <ActionButton disabled={isLoading} type="submit">Submit</ActionButton>
             </Form>
             <LoadingSpinner show={isLoading} />
             <p>

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Item;
 use App\Models\ItemUser;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -15,6 +17,9 @@ class ItemUserController extends Controller
             'item_id' => $request->item_id,
             'user_id' => Auth::id()
         ]);
+
+        $user = User::find(Auth::id());
+        $user->update(array('money' => $user->money - Item::find($request->item_id)->price));
 
         return response()->json([
             'message' => 'Item added to user!',

@@ -47,7 +47,7 @@ function Register() {
                 <Input id="email" label="Email: " description="example@example.com"/>
                 <Input type="password" id="pwd" label="Password: " description="8 characters, 1 uppercase, 1 lowercase, 1 number at least"/>
                 <Input type="password" id="repeat" label="Repeat password: " description="Repeat the password value" />
-                <ActionButton type="submit">Submit</ActionButton>
+                <ActionButton disabled={isLoading} type="submit">Submit</ActionButton>
             </Form>
             <LoadingSpinner show={isLoading} />
             <p>
