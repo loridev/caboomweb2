@@ -48,6 +48,11 @@ Route::prefix('/v1')->group(function () {
         Route::post('/additem', [ItemUserController::class, 'addItemToUser'])->middleware('auth:api');
     });
 
+    Route::prefix('/itemusers')->group(function () {
+        Route::get('/', [ItemUserController::class, 'show']);
+        Route::get('/current', [ItemUserController::class, 'showAuth'])->middleware('auth:api');
+    });
+
 
     Route::apiResource('/users', UserController::class);
     Route::apiResource('/items', ItemController::class);

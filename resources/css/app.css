@@ -1,5 +1,7 @@
 :root {
     --main-color: #AF22A5;
+    --main-color-disabled: #814b93;
+    --text-disabled: #9e9e9e;
     --background-color: #222222;
     --background-light: #444444;
     --background-overlay: #666666;
@@ -42,6 +44,14 @@ a {
     margin: 0 auto;
 }
 
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 16rem));
+    gap: 2rem;
+    justify-content: center;
+    padding-top: 2rem;
+}
+
 .horizontal-group {
     display: flex;
     justify-content: space-evenly;
@@ -50,6 +60,10 @@ a {
 
 .hide {
     display: none;
+}
+
+.disabled {
+    pointer-events: none;
 }
 
 @media (max-width: 648px) {

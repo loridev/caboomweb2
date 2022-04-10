@@ -21,4 +21,22 @@ class ItemUserController extends Controller
             'relationship' => $itemuser
         ]);
     }
+
+    public function show() {
+        return response()->json(
+            ItemUser::all()
+        );
+    }
+
+    public function showAuth() {
+        $itemUsers = ItemUser::all();
+
+        foreach ($itemUsers as $itemUser) {
+            if ($itemUser->user_id === Auth::id()) {
+                $itemUser['current'] = true;
+            }
+        }
+
+        return response()->json($itemUsers);
+    }
 }

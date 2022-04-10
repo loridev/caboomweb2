@@ -75,10 +75,10 @@ function Rankings() {
         setIsLoading(true);
         if (mode === 'indiv') {
             if (page === 0) {
-                let configObj = {url: `/api/v1/rankings/single?world_num=${worldNum}&level_num=${levelNum}`};
+                let configObj = {url: `/api/v1/rankings/single?world_num=${worldNum}&level_num=${levelNum}`, method: 'GET'};
                 if (localStorage.getItem('apitoken')) {
                     configObj = {
-                        url: `/api/v1/rankings/single/current?world_num=${worldNum}&level_num=${levelNum}`,
+                        url: `/api/v1/rankings/single/current?world_num=${worldNum}&level_num=${levelNum}`, method: 'GET',
                         token: localStorage.getItem('apitoken'),
                     };
                 }
@@ -96,10 +96,10 @@ function Rankings() {
 
                 }
             } else {
-                let configObj = {url: `/api/v1/rankings/single?world_num=${worldNum}&level_num=${levelNum}&page=${page}`};
+                let configObj = {url: `/api/v1/rankings/single?world_num=${worldNum}&level_num=${levelNum}&page=${page}`, method: 'GET'};
                 if (localStorage.getItem('apitoken')) {
                     configObj = {
-                        url: `/api/v1/rankings/single/current?world_num=${worldNum}&level_num=${levelNum}&page=${page}`,
+                        url: `/api/v1/rankings/single/current?world_num=${worldNum}&level_num=${levelNum}&page=${page}`, method: 'GET',
                         token: localStorage.getItem('apitoken'),
                     };
                 }
@@ -113,12 +113,13 @@ function Rankings() {
             }
         } else {
             if (page === 0) {
-                let configObj = {url: `/api/v1/rankings/multi`};
+                let configObj = {url: `/api/v1/rankings/multi`, method: 'GET'};
 
                 if (localStorage.getItem('apitoken')) {
                     configObj = {
                         url: `/api/v1/rankings/multi/current`,
                         token: localStorage.getItem('apitoken'),
+                        method: 'GET'
                     }
                 }
                 const responseFromApi = await Http.fetchData(configObj);
@@ -134,12 +135,13 @@ function Rankings() {
                     setNumsOfPages(pagesArr);
                 }
             } else {
-                let configObj = {url: `/api/v1/rankings/multi?page=${page}`};
+                let configObj = {url: `/api/v1/rankings/multi?page=${page}`, method: 'GET'};
 
                 if (localStorage.getItem('apitoken')) {
                     configObj = {
                         url: `/api/v1/rankings/multi/current?page=${page}`,
                         token: localStorage.getItem('apitoken'),
+                        method: 'GET'
                     }
                 }
 
@@ -203,7 +205,7 @@ function Rankings() {
             <div className="container">
                 <LoadingSpinner show={isLoading} />
                 {
-                    !isLoading && parseRankings().length === 0 ? (
+                    parseRankings().length === 0 && !isLoading ? (
                         <><h3>No rankings found for these filters!</h3><br/></>
                     ) : null
                 }
