@@ -67,6 +67,11 @@ a {
     pointer-events: none;
 }
 
+#refresh_btn {
+    font-size: 1.75rem;
+    width: 15rem;
+}
+
 @media (max-width: 648px) {
     .container {
         width: 95vw;

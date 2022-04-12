@@ -33,7 +33,7 @@ class _ValidateRegister
             ], 400);
         }
 
-        if (User::query()->where('email', $request->email)->orWhere('name', $request->name)) {
+        if (User::query()->where('email', $request->email)->orWhere('name', $request->name)->first()) {
             return response()->json([
                 'success' => false,
                 'message' => 'Wrong input data!',

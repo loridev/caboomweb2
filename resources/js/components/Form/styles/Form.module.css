@@ -2,3 +2,8 @@
     margin-top: 10vh;
     margin-bottom: 10vh;
 }
+
+.form button {
+    width: 100%;
+    font-size: 1.25rem;
+}

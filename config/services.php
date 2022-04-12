@@ -30,5 +30,10 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    'google' => [
+        'client_id' => '69813964107-v79lgc21te8n6b986k7inu92v2cph3ru.apps.googleusercontent.com',
+        'client_secret' => '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',
+        'redirect' => 'https://caboomgame.herokuapp.com/completeregister',
+    ]
 
 ];

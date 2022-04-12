@@ -3,6 +3,7 @@
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ItemUserController;
 use App\Http\Controllers\RankingController;
+use App\Http\Controllers\SocialiteController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\_CheckMoney;
 use App\Http\Middleware\_ValidateRegister;
@@ -29,6 +30,11 @@ Route::prefix('/v1')->group(function () {
         Route::middleware('auth:api')->group(function () {
             Route::post('current', [UserController::class, 'currentUser']);
             Route::post('logout', [UserController::class, 'logout']);
+        });
+
+        Route::prefix('/google')->group(function () {
+            Route::get('/url', [SocialiteController::class, 'getGoggleUrl']);
+            Route::get('/callback', [SocialiteController::class, 'googleLoginCallback']);
         });
     });
 

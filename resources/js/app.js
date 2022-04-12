@@ -31,6 +31,7 @@ import AuthContext, { AuthContextProvider } from './context/AuthContext';
 import Shop from "./pages/Shop";
 import {ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import CompleteRegister from "./pages/CompleteRegister";
 
 function App() {
     const LINKS = [
@@ -108,6 +109,7 @@ if (document.getElementById('root')) {
                             <Route path='/rankings' element={<Rankings />} />
                             <Route path='/shop' element={<Shop />} />
                             <Route path='/admin' element={<AdminPanel />} />
+                            <Route path='/completeregister' element={<CompleteRegister />} />
                             <Route path="*" element={<NotFound />} />
                         </Routes>
                     </BrowserRouter>

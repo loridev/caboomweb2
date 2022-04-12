@@ -200,7 +200,7 @@ function Rankings() {
                     <option value={3}>Level 3</option>
                     <option value={4}>Level 4</option>
                 </Select>
-                <ActionButton disabled={isLoading} type="submit">Refresh</ActionButton>
+                <ActionButton id="refresh_btn" disabled={isLoading} type="submit">Refresh</ActionButton>
             </Form>
             <div className="container">
                 <LoadingSpinner show={isLoading} />
