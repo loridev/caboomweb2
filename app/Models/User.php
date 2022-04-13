@@ -47,6 +47,7 @@ class User extends Authenticatable
 
     public function items()
     {
-        return $this->belongsToMany(Item::class, 'items_users', 'user_id', 'item_id');
+        return $this->belongsToMany(Item::class, 'items_users', 'user_id', 'item_id')
+            ->withPivot(['equipped']);
     }
 }

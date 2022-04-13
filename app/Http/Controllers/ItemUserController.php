@@ -7,7 +7,6 @@ use App\Models\ItemUser;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 
 class ItemUserController extends Controller
 {
@@ -15,7 +14,8 @@ class ItemUserController extends Controller
     {
         $itemuser = ItemUser::create([
             'item_id' => $request->item_id,
-            'user_id' => Auth::id()
+            'user_id' => Auth::id(),
+            'equipped' => $request->equipped ?? false,
         ]);
 
         $user = User::find(Auth::id());

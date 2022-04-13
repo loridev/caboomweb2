@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ItemUser;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Passport\TokenRepository;
 
@@ -111,5 +113,12 @@ class UserController extends Controller
             'success' => true,
             'message' => 'User logout successfully.'
         ]);
+    }
+
+    public function getEquipped()
+    {
+        $items = User::find(Auth::id())->items()->where('equipped', 1)->get();
+
+        return response()->json($items);
     }
 }

@@ -13,6 +13,7 @@ class Item extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class, 'items_users', 'item_id', 'user_id');
+        return $this->belongsToMany(User::class, 'items_users', 'item_id', 'user_id')
+            ->withPivot(['equipped']);
     }
 }

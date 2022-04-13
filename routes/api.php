@@ -54,6 +54,7 @@ Route::prefix('/v1')->group(function () {
     Route::prefix('/users')->group(function () {
         Route::post('/additem', [ItemUserController::class, 'addItemToUser'])
             ->middleware('auth:api')->middleware(_CheckMoney::class);
+        Route::get('/equipped', [UserController::class, 'getEquipped'])->middleware('auth:api');
     });
 
     Route::prefix('/itemusers')->group(function () {

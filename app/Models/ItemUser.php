@@ -11,5 +11,5 @@ class ItemUser extends Model
 
     protected $table = 'items_users';
 
-    protected $fillable = ['item_id', 'user_id'];
+    protected $fillable = ['item_id', 'user_id', 'equipped'];
 }

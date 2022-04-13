@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('item_id');
             $table->unsignedBigInteger('user_id');
+            $table->boolean('equipped')->nullable()->default(false);
             $table->timestamps();
             $table->foreign('item_id')->references('id')->on('items')
                 ->onUpdate('cascade')->onDelete('cascade');
