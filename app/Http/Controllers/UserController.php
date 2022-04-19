@@ -77,13 +77,15 @@ class UserController extends Controller
     public function login(Request $request)
     {
         if (auth()->attempt($request->all())) {
-            $token = auth()->user()->createToken('passport_token')->accessToken;
+            $user = auth()->user();
+            $token = $user->createToken('passport_token')->accessToken;
+            $user->items;
 
             return response()->json([
                 'success' => true,
                 'message' => 'Login successful!',
                 'token' => $token,
-                'user' => auth()->user()
+                'user' => $user
             ]);
         }
 
