@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {useContext, useState} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Form from "../components/Form/Form";
 import ActionButton from "../UI/ActionButton/ActionButton";
@@ -6,10 +6,12 @@ import Input from "../UI/Input/Input";
 import LoadingSpinner from "../UI/LoadingSpinner/LoadingSpinner";
 import Http from './../utils/Http';
 import {toast} from "react-toastify";
+import AuthContext from "../context/AuthContext";
 
 function Register() {
     const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState(false);
+    const ctx = useContext(AuthContext);
 
     const register = async (ev) => {
         ev.preventDefault();
@@ -33,6 +35,15 @@ function Register() {
                     toast.error(error);
                 });
             });
+        } else {
+            toast.success('User registered successfully!', {autoClose: 1000});
+
+            setTimeout(() => {
+                ctx.setToken(responseFromApi.data.token);
+                localStorage.setItem('apitoken', responseFromApi.data.token);
+                navigate(-1);
+            }, 1000);
+
         }
 
         console.log(responseFromApi);

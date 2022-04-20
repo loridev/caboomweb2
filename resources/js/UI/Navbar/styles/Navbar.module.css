@@ -20,9 +20,9 @@
 }
 
 .logo {
-    width: 45px;
-    height: 45px;
-    fill: white;
+    width: 120px;
+    height: 90px;
+    content: url("/images/logodesktop.svg");
 }
 
 .navOptions {
@@ -45,6 +45,7 @@
     .logo {
         width: 45px;
         height: 45px;
+        content: url("/images/logomobile.svg");
     }
 
     .navOptions {

@@ -15,7 +15,7 @@ function Navbar(props) {
             <div className={classes.logoNav}>
                 <div className={classes.logoContainer}>
                     <Link to="/">
-                        <img src="/images/logo.svg" className={classes.logo} />
+                        <img className={classes.logo} />
                     </Link>
                 </div>
             </div>

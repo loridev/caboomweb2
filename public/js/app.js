@@ -5788,7 +5788,6 @@ function Navbar(props) {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
           to: "/",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-            src: "/images/logo.svg",
             className: _styles_Navbar_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].logo
           })
         })
@@ -7769,15 +7768,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
 /* harmony import */ var _components_Form_Form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Form/Form */ "./resources/js/components/Form/Form.jsx");
 /* harmony import */ var _UI_ActionButton_ActionButton__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../UI/ActionButton/ActionButton */ "./resources/js/UI/ActionButton/ActionButton.jsx");
 /* harmony import */ var _UI_Input_Input__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../UI/Input/Input */ "./resources/js/UI/Input/Input.jsx");
 /* harmony import */ var _UI_LoadingSpinner_LoadingSpinner__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../UI/LoadingSpinner/LoadingSpinner */ "./resources/js/UI/LoadingSpinner/LoadingSpinner.jsx");
 /* harmony import */ var _utils_Http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../utils/Http */ "./resources/js/utils/Http.js");
 /* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/dist/react-toastify.esm.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _context_AuthContext__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../context/AuthContext */ "./resources/js/context/AuthContext.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -7807,13 +7807,16 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function Register() {
-  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_9__.useNavigate)();
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_10__.useNavigate)();
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
       isLoading = _useState2[0],
       setIsLoading = _useState2[1];
+
+  var ctx = (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(_context_AuthContext__WEBPACK_IMPORTED_MODULE_8__["default"]);
 
   var register = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(ev) {
@@ -7845,6 +7848,15 @@ function Register() {
                     react_toastify__WEBPACK_IMPORTED_MODULE_7__.toast.error(error);
                   });
                 });
+              } else {
+                react_toastify__WEBPACK_IMPORTED_MODULE_7__.toast.success('User registered successfully!', {
+                  autoClose: 1000
+                });
+                setTimeout(function () {
+                  ctx.setToken(responseFromApi.data.token);
+                  localStorage.setItem('apitoken', responseFromApi.data.token);
+                  navigate(-1);
+                }, 1000);
               }
 
               console.log(responseFromApi);
@@ -7863,37 +7875,37 @@ function Register() {
     };
   }();
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
     className: "container",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_components_Form_Form__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_components_Form_Form__WEBPACK_IMPORTED_MODULE_2__["default"], {
       onSubmit: register,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
         id: "user",
         label: "Name: ",
         description: "3 characters minimum, 12 characters maximum, no symbols allowed"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
         id: "email",
         label: "Email: ",
         description: "example@example.com"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
         type: "password",
         id: "pwd",
         label: "Password: ",
         description: "8 characters, 1 uppercase, 1 lowercase, 1 number at least"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
         type: "password",
         id: "repeat",
         label: "Repeat password: ",
         description: "Repeat the password value"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_UI_ActionButton_ActionButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_UI_ActionButton_ActionButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
         disabled: isLoading,
         type: "submit",
         children: "Submit"
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_UI_LoadingSpinner_LoadingSpinner__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_UI_LoadingSpinner_LoadingSpinner__WEBPACK_IMPORTED_MODULE_5__["default"], {
       show: isLoading
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("p", {
-      children: ["Already have an account? ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Link, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("p", {
+      children: ["Already have an account? ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Link, {
         to: "/login",
         children: "Log in"
       })]
@@ -13675,7 +13687,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".Xav2KkroiL5VS0sgoUQziw\\=\\= {\n    display: flex;\n    background: linear-gradient(#0c0c0c, #2e2e2e);\n    justify-content: space-between;\n    align-items: center;\n    padding: 0px 40px;\n    height: 80px;\n}\n\n._3vupHPLKfPLV4KjcJcgBkQ\\=\\= {\n    display: flex;\n    align-items: center;\n    justify-content: space-evenly;\n}\n\n.s8Ng-kBpSRv9ec85dYM6-w\\=\\= {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n\n.inUNh\\+fAoZaDZoyTa8xhMA\\=\\= {\n    width: 45px;\n    height: 45px;\n    fill: white;\n}\n\n.AFNxNHMSFbc4HJywFLecqQ\\=\\= {\n    padding-left: 25px;\n    display: grid;\n    grid-template-columns: repeat(5, auto);\n    grid-gap: 50px;\n    list-style-type: none;\n}\n\n.tFTPZe2pjks9wcRH9TUREw\\=\\= {\n    display: none;\n}\n\n@media (max-width: 648px) {\n    .Xav2KkroiL5VS0sgoUQziw\\=\\= {\n        padding: 0px 10px;\n    }\n\n    .inUNh\\+fAoZaDZoyTa8xhMA\\=\\= {\n        width: 45px;\n        height: 45px;\n    }\n\n    .AFNxNHMSFbc4HJywFLecqQ\\=\\= {\n        display: flex;\n        width: 100%;\n        height: 350px;\n        position: absolute;\n        top: 80px;\n        right: 100%;\n        opacity: 0;\n        transition: all 0.5s ease;\n        flex-direction: column;\n        list-style-type: none;\n        grid-gap: 0px;\n    }\n\n    .AFNxNHMSFbc4HJywFLecqQ\\=\\=.wv9j238oUTdKT\\+Ic6QQerA\\=\\= {\n        background: linear-gradient(#2e2e2e, #0c0c0c);\n        right: 0;\n        opacity: 1;\n        transition: all 0.5s ease;\n        z-index: 2;\n        align-content: center;\n        padding-left: 0px;\n    }\n\n    .V0\\+0fh\\+cuSVlwgFQvDvDMQ\\=\\= {\n        width: 30px;\n        height: 30px;\n    }\n\n    .V0\\+0fh\\+cuSVlwgFQvDvDMQ\\=\\= img {\n        fill: white;\n    }\n\n    .tFTPZe2pjks9wcRH9TUREw\\=\\= {\n        display: block;\n    }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".Xav2KkroiL5VS0sgoUQziw\\=\\= {\n    display: flex;\n    background: linear-gradient(#0c0c0c, #2e2e2e);\n    justify-content: space-between;\n    align-items: center;\n    padding: 0px 40px;\n    height: 80px;\n}\n\n._3vupHPLKfPLV4KjcJcgBkQ\\=\\= {\n    display: flex;\n    align-items: center;\n    justify-content: space-evenly;\n}\n\n.s8Ng-kBpSRv9ec85dYM6-w\\=\\= {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n\n.inUNh\\+fAoZaDZoyTa8xhMA\\=\\= {\n    width: 120px;\n    height: 90px;\n    content: url(\"/images/logodesktop.svg\");\n}\n\n.AFNxNHMSFbc4HJywFLecqQ\\=\\= {\n    padding-left: 25px;\n    display: grid;\n    grid-template-columns: repeat(5, auto);\n    grid-gap: 50px;\n    list-style-type: none;\n}\n\n.tFTPZe2pjks9wcRH9TUREw\\=\\= {\n    display: none;\n}\n\n@media (max-width: 648px) {\n    .Xav2KkroiL5VS0sgoUQziw\\=\\= {\n        padding: 0px 10px;\n    }\n\n    .inUNh\\+fAoZaDZoyTa8xhMA\\=\\= {\n        width: 45px;\n        height: 45px;\n        content: url(\"/images/logomobile.svg\");\n    }\n\n    .AFNxNHMSFbc4HJywFLecqQ\\=\\= {\n        display: flex;\n        width: 100%;\n        height: 350px;\n        position: absolute;\n        top: 80px;\n        right: 100%;\n        opacity: 0;\n        transition: all 0.5s ease;\n        flex-direction: column;\n        list-style-type: none;\n        grid-gap: 0px;\n    }\n\n    .AFNxNHMSFbc4HJywFLecqQ\\=\\=.wv9j238oUTdKT\\+Ic6QQerA\\=\\= {\n        background: linear-gradient(#2e2e2e, #0c0c0c);\n        right: 0;\n        opacity: 1;\n        transition: all 0.5s ease;\n        z-index: 2;\n        align-content: center;\n        padding-left: 0px;\n    }\n\n    .V0\\+0fh\\+cuSVlwgFQvDvDMQ\\=\\= {\n        width: 30px;\n        height: 30px;\n    }\n\n    .V0\\+0fh\\+cuSVlwgFQvDvDMQ\\=\\= img {\n        fill: white;\n    }\n\n    .tFTPZe2pjks9wcRH9TUREw\\=\\= {\n        display: block;\n    }\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"header": "Xav2KkroiL5VS0sgoUQziw==",
@@ -13736,7 +13748,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "._7sovfdBZAuvxyhw536x4vw\\=\\= {\r\n    background-position: center center;\r\n\tbackground-size: cover;\r\n\tbackground-repeat: no-repeat;\r\n    height: 91vh;\r\n    width: 100vw;\r\n    background-color: rgba(0,0,0,0.8);\r\n    filter:brightness(0.5);\r\n}\r\n\r\n.wsj50hmnPQux6DiFdElPIA\\=\\= {\r\n    position: relative;\r\n    display: flex;\r\n}\r\n\r\n.ZI5wjEAtwa90YI\\+Ly1IkKQ\\=\\= {\r\n    position:relative;\r\n    z-index:0;\r\n}\r\n\r\n.Z9ND8itfwqi6x9OsoznmHg\\=\\= {\r\n    position:absolute;\r\n    text-align: center;\r\n    z-index:1;\r\n    width: 100vw;\r\n    align-self: center;\r\n}\r\n\r\n.HBlzEyDO09Ary6iZYKxQLw\\=\\= {\r\n    font-size: 6rem;\r\n    margin-bottom: 10vh;\r\n}\r\n\r\n@media (max-width: 648px) {\r\n    .HBlzEyDO09Ary6iZYKxQLw\\=\\= {\r\n        font-size: 3.5rem;\r\n    }\r\n}\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "._7sovfdBZAuvxyhw536x4vw\\=\\= {\n    background-position: center center;\n\tbackground-size: cover;\n\tbackground-repeat: no-repeat;\n    height: 91vh;\n    width: 100vw;\n    background-color: rgba(0,0,0,0.8);\n    filter:brightness(0.5);\n}\n\n.wsj50hmnPQux6DiFdElPIA\\=\\= {\n    position: relative;\n    display: flex;\n}\n\n.ZI5wjEAtwa90YI\\+Ly1IkKQ\\=\\= {\n    position:relative;\n    z-index:0;\n}\n\n.ZI5wjEAtwa90YI\\+Ly1IkKQ\\=\\= source {\n    content: url(\"/videos/mapache.mp4\");\n}\n\n.Z9ND8itfwqi6x9OsoznmHg\\=\\= {\n    position:absolute;\n    text-align: center;\n    z-index:1;\n    width: 100vw;\n    align-self: center;\n}\n\n.HBlzEyDO09Ary6iZYKxQLw\\=\\= {\n    font-size: 6rem;\n    margin-bottom: 10vh;\n}\n\n@media (max-width: 648px) {\n    .HBlzEyDO09Ary6iZYKxQLw\\=\\= {\n        font-size: 3.5rem;\n    }\n\n    .ZI5wjEAtwa90YI\\+Ly1IkKQ\\=\\= source {\n        content: url(\"/videos/mapacheMobile.mp4\");\n    }\n}\n\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"background": "_7sovfdBZAuvxyhw536x4vw==",
