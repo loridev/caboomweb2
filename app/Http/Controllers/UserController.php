@@ -61,7 +61,8 @@ class UserController extends Controller
             'money' => $request->money ? $request->money : 0,
             'indiv_level' => $request->indiv_level ? $request->indiv_level : '1-1',
             'multi_wins' => $request->multi_wins ? $request->multi_wins : 0,
-            'social_id' => $request->social_id ? $request->social_id : null
+            'social_id' => $request->social_id ? $request->social_id : null,
+            'character' => $request->character ? $request->character : 'CARLOS'
         ]);
 
         $token = $user->createToken('passport_token')->accessToken;
