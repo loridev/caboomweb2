@@ -151,4 +151,10 @@ class UserController extends Controller
 
         return response()->json($itemUser->first());
     }
+
+    public function setCharacter(Request $request) {
+        User::query()->where('id', Auth::id())->update($request->all());
+
+        return response()->json(Auth::user());
+    }
 }

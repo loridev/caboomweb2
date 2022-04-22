@@ -56,6 +56,7 @@ Route::prefix('/v1')->group(function () {
             ->middleware('auth:api')->middleware(_CheckMoney::class);
         Route::get('/equipped', [UserController::class, 'getEquipped'])->middleware('auth:api');
         Route::post('/toggle_equipped', [UserController::class, 'toogleEquipped'])->middleware('auth:api');
+        Route::post('/set_character', [UserController::class, 'setCharacter'])->middleware('auth:api');
     });
 
     Route::prefix('/itemusers')->group(function () {
