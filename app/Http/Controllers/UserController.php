@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Item;
 use App\Models\ItemUser;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -97,6 +98,7 @@ class UserController extends Controller
 
     public function currentUser()
     {
+        auth()->user()->items;
         return response()->json([
             'success' => true,
             'message' => 'Data fetched successfully.',
@@ -119,8 +121,33 @@ class UserController extends Controller
 
     public function getEquipped()
     {
-        $items = User::find(Auth::id())->items()->where('equipped', 1)->get();
+        $items = Auth::user()->items()->where('equipped', 1)->get();
 
         return response()->json($items);
+    }
+
+    public function toogleEquipped(Request $request)
+    {
+        $itemUser = ItemUser::query()->where('item_id', $request->item_id)
+            ->where('user_id', Auth::id());
+
+        $item = Item::find($request->item_id);
+
+        $itemsType = Auth::user()->items()->where('equipped', 1)
+            ->where('type', $item->type);
+
+        $edit = ['equipped' => 0];
+
+        if (!is_null($itemsType->first())) {
+            $itemsType->update($edit);
+        }
+
+        if ($itemUser->first()->equipped === 0) {
+            $edit['equipped'] = 1;
+        }
+
+        $itemUser->update($edit);
+
+        return response()->json($itemUser->first());
     }
 }
