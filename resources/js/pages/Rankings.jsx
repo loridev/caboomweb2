@@ -84,7 +84,7 @@ function Rankings() {
                 }
                 const responseFromApi = await Http.fetchData(configObj);
                 if (!responseFromApi.status) {
-                    // FAILED
+                    setFullData([]);
                 } else {
                     const pagesArr = [];
                     for (let i = 1; i <= responseFromApi.data.numPages; i++) {
@@ -105,7 +105,7 @@ function Rankings() {
                 }
                 const responseFromApi = await Http.fetchData(configObj);
                 if (!responseFromApi.status) {
-                    // FAILED
+                    setData([]);
                 } else {
                     console.log(responseFromApi.data);
                     setData(responseFromApi.data.rankings);
@@ -124,7 +124,7 @@ function Rankings() {
                 }
                 const responseFromApi = await Http.fetchData(configObj);
                 if (!responseFromApi.status) {
-                    // FAILED
+                    setFullData([]);
                 } else {
                     const pagesArr = [];
                     for (let i = 1; i <= responseFromApi.data.numPages; i++) {
@@ -147,7 +147,7 @@ function Rankings() {
 
                 const responseFromApi = await Http.fetchData(configObj);
                 if (!responseFromApi.status) {
-                    // FAILED
+                    setData([]);
                 } else {
                     console.log(responseFromApi.data);
                     setData(responseFromApi.data.rankings);

@@ -7462,7 +7462,8 @@ function Rankings() {
             case 10:
               responseFromApi = _context.sent;
 
-              if (!responseFromApi.status) {// FAILED
+              if (!responseFromApi.status) {
+                setFullData([]);
               } else {
                 pagesArr = [];
 
@@ -7497,7 +7498,8 @@ function Rankings() {
             case 18:
               _responseFromApi = _context.sent;
 
-              if (!_responseFromApi.status) {// FAILED
+              if (!_responseFromApi.status) {
+                setData([]);
               } else {
                 console.log(_responseFromApi.data);
                 setData(_responseFromApi.data.rankings);
@@ -7532,7 +7534,8 @@ function Rankings() {
             case 27:
               _responseFromApi2 = _context.sent;
 
-              if (!_responseFromApi2.status) {// FAILED
+              if (!_responseFromApi2.status) {
+                setFullData([]);
               } else {
                 _pagesArr = [];
 
@@ -7567,7 +7570,8 @@ function Rankings() {
             case 35:
               _responseFromApi3 = _context.sent;
 
-              if (!_responseFromApi3.status) {// FAILED
+              if (!_responseFromApi3.status) {
+                setData([]);
               } else {
                 console.log(_responseFromApi3.data);
                 setData(_responseFromApi3.data.rankings);
