@@ -18,6 +18,7 @@ function Rankings() {
     const [mode, setMode] = useState('indiv');
     const [worldNum, setWorldNum] = useState(1);
     const [levelNum, setLevelNum] = useState(1);
+    const [isMultSelected, setIsMultSelected] = useState(false);
     const firstUpdate = useRef(true);
 
     const refresh = (ev) => {
@@ -157,6 +158,8 @@ function Rankings() {
         setIsLoading(false);
     }
 
+    const checkMult = (ev) => setIsMultSelected(ev.target.value === 'multi');
+
     useEffect(async () => {
         if (firstUpdate.current) {
             await getData(mode, worldNum, levelNum);
@@ -185,16 +188,16 @@ function Rankings() {
     return (
         <>
             <Form onSubmit={refresh}>
-                <Select id="mode" placeholder="Selecct a mode" >
+                <Select onChange={checkMult} disabled={isLoading} id="mode" placeholder="Selecct a mode" >
                     <option value="indiv">Single player</option>
                     <option value="multi">Multiplayer</option>
                 </Select>
-                <Select id="world" placeholder="Select a world">
+                <Select disabled={isLoading ||isMultSelected} id="world" placeholder="Select a world">
                     <option value={1}>World 1</option>
                     <option value={2}>World 2</option>
                     <option value={3}>World 3</option>
                 </Select>
-                <Select id="level" placeholder="Select a level">
+                <Select disabled={isLoading || isMultSelected} id="level" placeholder="Select a level">
                     <option value={1}>Level 1</option>
                     <option value={2}>Level 2</option>
                     <option value={3}>Level 3</option>

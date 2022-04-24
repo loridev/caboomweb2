@@ -25,9 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('users', function ($table) {
-            $table->dropColumn('social_id');
-            $table->dropColumn('social_type');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('character');
         });
     }
 };

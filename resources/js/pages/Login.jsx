@@ -76,7 +76,7 @@ function Login() {
                 <Input id="user" label="Name: " />
                 <Input id="pwd" label="Password: " type="password" />
                 {isGoogleLoading ? <LoadingSpinner show={isGoogleLoading} />
-                    : <ActionButton onClick={redirToGoogle} type="button">Sign in with Google</ActionButton>}
+                    : <ActionButton disabled={isLoading} onClick={redirToGoogle} type="button">Sign in with Google</ActionButton>}
                 <ActionButton disabled={isLoading} type="submit">Submit</ActionButton>
             </Form>
             <LoadingSpinner show={isLoading} />

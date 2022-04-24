@@ -5852,7 +5852,8 @@ function Select(props) {
       setValue = _useState2[1];
 
   var handleValue = function handleValue(ev) {
-    return setValue(ev.target.value);
+    setValue(ev.target.value);
+    if (props.onChange) props.onChange(ev);
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
@@ -7203,6 +7204,7 @@ function Login() {
       }), isGoogleLoading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_UI_LoadingSpinner_LoadingSpinner__WEBPACK_IMPORTED_MODULE_6__["default"], {
         show: isGoogleLoading
       }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_UI_ActionButton_ActionButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        disabled: isLoading,
         onClick: redirToGoogle,
         type: "button",
         children: "Sign in with Google"
@@ -7349,6 +7351,11 @@ function Rankings() {
       _useState18 = _slicedToArray(_useState17, 2),
       levelNum = _useState18[0],
       setLevelNum = _useState18[1];
+
+  var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_5__.useState)(false),
+      _useState20 = _slicedToArray(_useState19, 2),
+      isMultSelected = _useState20[0],
+      setIsMultSelected = _useState20[1];
 
   var firstUpdate = (0,react__WEBPACK_IMPORTED_MODULE_5__.useRef)(true);
 
@@ -7593,6 +7600,10 @@ function Rankings() {
     };
   }();
 
+  var checkMult = function checkMult(ev) {
+    return setIsMultSelected(ev.target.value === 'multi');
+  };
+
   (0,react__WEBPACK_IMPORTED_MODULE_5__.useEffect)( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
       while (1) {
@@ -7673,6 +7684,8 @@ function Rankings() {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(_components_Form_Form__WEBPACK_IMPORTED_MODULE_3__["default"], {
       onSubmit: refresh,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(_UI_Select_Select__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        onChange: checkMult,
+        disabled: isLoading,
         id: "mode",
         placeholder: "Selecct a mode",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("option", {
@@ -7683,6 +7696,7 @@ function Rankings() {
           children: "Multiplayer"
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(_UI_Select_Select__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        disabled: isLoading || isMultSelected,
         id: "world",
         placeholder: "Select a world",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("option", {
@@ -7696,6 +7710,7 @@ function Rankings() {
           children: "World 3"
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(_UI_Select_Select__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        disabled: isLoading || isMultSelected,
         id: "level",
         placeholder: "Select a level",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("option", {

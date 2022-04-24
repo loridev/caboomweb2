@@ -4,7 +4,10 @@ import classes from './styles/Select.module.css';
 function Select (props) {
     const [value, setValue] = useState('');
 
-    const handleValue = (ev) => setValue(ev.target.value);
+    const handleValue = (ev) => {
+        setValue(ev.target.value);
+        if (props.onChange) props.onChange(ev);
+    }
 
     return (
         <>
