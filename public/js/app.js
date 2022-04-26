@@ -7073,86 +7073,23 @@ function Login() {
       isLoading = _useState2[0],
       setIsLoading = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(false),
-      _useState4 = _slicedToArray(_useState3, 2),
-      isGoogleLoading = _useState4[0],
-      setIsGoogleLoading = _useState4[1];
-
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(''),
-      _useState6 = _slicedToArray(_useState5, 2),
-      googleUrl = _useState6[0],
-      setGoogleUrl = _useState6[1];
-
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_11__.useNavigate)();
   var ctx = (0,react__WEBPACK_IMPORTED_MODULE_4__.useContext)(_context_AuthContext__WEBPACK_IMPORTED_MODULE_7__["default"]);
-  (0,react__WEBPACK_IMPORTED_MODULE_4__.useEffect)( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            _context.next = 2;
-            return getGoogleUrl();
-
-          case 2:
-          case "end":
-            return _context.stop();
-        }
-      }
-    }, _callee);
-  })), []);
-
-  var getGoogleUrl = /*#__PURE__*/function () {
-    var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
-      var response;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
-        while (1) {
-          switch (_context2.prev = _context2.next) {
-            case 0:
-              setIsGoogleLoading(true);
-              _context2.next = 3;
-              return _utils_Http__WEBPACK_IMPORTED_MODULE_5__["default"].fetchData({
-                method: 'GET',
-                url: '/api/v1/auth/google/url'
-              });
-
-            case 3:
-              response = _context2.sent;
-
-              if (response.status) {
-                setGoogleUrl(response.data.url);
-              } else {
-                react_toastify__WEBPACK_IMPORTED_MODULE_8__.toast.error('There was an error retrieving Google auth URL');
-              }
-
-              setIsGoogleLoading(false);
-
-            case 6:
-            case "end":
-              return _context2.stop();
-          }
-        }
-      }, _callee2);
-    }));
-
-    return function getGoogleUrl() {
-      return _ref2.apply(this, arguments);
-    };
-  }();
 
   var redirToGoogle = function redirToGoogle() {
-    window.location.href = googleUrl;
+    window.location.assign('/redirect/google');
   };
 
   var logIn = /*#__PURE__*/function () {
-    var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3(ev) {
+    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(ev) {
       var responseFromApi;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
         while (1) {
-          switch (_context3.prev = _context3.next) {
+          switch (_context.prev = _context.next) {
             case 0:
               ev.preventDefault();
               setIsLoading(true);
-              _context3.next = 4;
+              _context.next = 4;
               return _utils_Http__WEBPACK_IMPORTED_MODULE_5__["default"].fetchData({
                 url: '/api/v1/auth/login',
                 method: 'POST',
@@ -7163,7 +7100,7 @@ function Login() {
               });
 
             case 4:
-              responseFromApi = _context3.sent;
+              responseFromApi = _context.sent;
 
               if (responseFromApi.status) {
                 react_toastify__WEBPACK_IMPORTED_MODULE_8__.toast.success('User logged successfully! Welcome back ' + responseFromApi.data.user.name + '!');
@@ -7179,14 +7116,14 @@ function Login() {
 
             case 7:
             case "end":
-              return _context3.stop();
+              return _context.stop();
           }
         }
-      }, _callee3);
+      }, _callee);
     }));
 
     return function logIn(_x) {
-      return _ref3.apply(this, arguments);
+      return _ref.apply(this, arguments);
     };
   }();
 
@@ -7201,9 +7138,7 @@ function Login() {
         id: "pwd",
         label: "Password: ",
         type: "password"
-      }), isGoogleLoading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_UI_LoadingSpinner_LoadingSpinner__WEBPACK_IMPORTED_MODULE_6__["default"], {
-        show: isGoogleLoading
-      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_UI_ActionButton_ActionButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_UI_ActionButton_ActionButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
         disabled: isLoading,
         onClick: redirToGoogle,
         type: "button",

@@ -8,17 +8,14 @@ use Laravel\Socialite\Facades\Socialite;
 
 class SocialiteController extends Controller
 {
-    public function getGoggleUrl(): \Illuminate\Http\JsonResponse
+    public function getGoggleUrl()
     {
-        return response()->json([
-            'url' => Socialite::driver('google')->stateless()->redirect()->getTargetUrl()
-        ]);
+        return Socialite::driver('google')->redirect();
     }
 
     public function googleLoginCallback()
     {
-        $googleUser = Socialite::driver('google')->stateless()->user();
-        dd($googleUser);
+        $googleUser = Socialite::with('google')->stateless()->user();
         $user = User::where('social_id', $googleUser->getId());
 
         if ($user) {

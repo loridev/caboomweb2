@@ -11,31 +11,11 @@ import Button from "../UI/Button/Button";
 
 function Login() {
     const [isLoading, setIsLoading] = useState(false);
-    const [isGoogleLoading, setIsGoogleLoading] = useState(false);
-    const [googleUrl, setGoogleUrl] = useState('');
     const navigate = useNavigate();
     const ctx = useContext(AuthContext);
 
-    useEffect(async () => {
-        await getGoogleUrl();
-    }, []);
-
-    const getGoogleUrl = async () => {
-        setIsGoogleLoading(true);
-        const response = await Http.fetchData({method: 'GET', url: '/api/v1/auth/google/url'});
-
-        if (response.status) {
-            setGoogleUrl(response.data.url);
-        } else {
-            toast.error('There was an error retrieving Google auth URL');
-        }
-
-
-        setIsGoogleLoading(false);
-    }
-
     const redirToGoogle = () => {
-        window.location.href = googleUrl;
+        window.location.assign('/redirect/google');
     }
 
     const logIn = async (ev) => {
@@ -75,8 +55,7 @@ function Login() {
             <Form onSubmit={logIn}>
                 <Input id="user" label="Name: " />
                 <Input id="pwd" label="Password: " type="password" />
-                {isGoogleLoading ? <LoadingSpinner show={isGoogleLoading} />
-                    : <ActionButton disabled={isLoading} onClick={redirToGoogle} type="button">Sign in with Google</ActionButton>}
+                <ActionButton disabled={isLoading} onClick={redirToGoogle} type="button">Sign in with Google</ActionButton>
                 <ActionButton disabled={isLoading} type="submit">Submit</ActionButton>
             </Form>
             <LoadingSpinner show={isLoading} />
