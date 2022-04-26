@@ -11,6 +11,14 @@ use Illuminate\Support\Facades\Validator;
 
 class RankingController extends Controller
 {
+    public function index() {
+        $rankings = Ranking::all();
+        foreach ($rankings as $ranking) {
+            $ranking->user;
+        }
+        return response()->json($rankings);
+    }
+
     public function store(Request $request): JsonResponse
     {
         $validator = Validator::make(

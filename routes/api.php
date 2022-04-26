@@ -43,6 +43,7 @@ Route::prefix('/v1')->group(function () {
 
         Route::prefix('/single')->group(function () {
             Route::get('/', [RankingController::class, 'getIndiv']);
+            Route::get('/all', [RankingController::class, 'index']);
             Route::get('/current', [RankingController::class, 'getIndiv'])->middleware('auth:api');
         });
         Route::prefix('/multi')->group(function () {
