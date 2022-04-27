@@ -132,6 +132,8 @@ class UserController extends Controller
         $itemUser = ItemUser::query()->where('item_id', $request->item_id)
             ->where('user_id', Auth::id());
 
+        $equipped = $itemUser->first()->equipped;
+
         $item = Item::find($request->item_id);
 
         $itemsType = Auth::user()->items()->where('equipped', 1)
@@ -143,9 +145,7 @@ class UserController extends Controller
             $itemsType->update($edit);
         }
 
-        if ($itemUser->first()->equipped === 0) {
-            $edit['equipped'] = 1;
-        }
+        $edit['equipped'] = $equipped === 0 ? 1 : 0;
 
         $itemUser->update($edit);
 
