@@ -10,12 +10,12 @@ class SocialiteController extends Controller
 {
     public function getGoggleUrl()
     {
-        return Socialite::driver('google')->redirect();
+        return Socialite::driver('google')->stateless()->redirect();
     }
 
     public function googleLoginCallback()
     {
-        $googleUser = Socialite::with('google')->stateless()->user();
+        $googleUser = Socialite::with('google')->stateless()->with(['access_type' => 'offline'])->user();
         $user = User::where('social_id', $googleUser->getId());
 
         if ($user) {
