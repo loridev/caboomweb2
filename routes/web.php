@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/redirect/google', [SocialiteController::class, 'getGoggleUrl']);
+Route::get('/callback/google', [SocialiteController::class, 'googleLoginCallback']);
 
-Route::get('/{path?}', function () {
+Route::get('/{path?}/{params?}/{params2?}', function () {
     return view('home');
 });

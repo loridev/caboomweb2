@@ -109,7 +109,7 @@ if (document.getElementById('root')) {
                             <Route path='/rankings' element={<Rankings />} />
                             <Route path='/shop' element={<Shop />} />
                             <Route path='/admin' element={<AdminPanel />} />
-                            <Route path='/completeregister' element={<CompleteRegister />} />
+                            <Route path='/completeregister/:socialId/:email' element={<CompleteRegister />} />
                             <Route path="*" element={<NotFound />} />
                         </Routes>
                     </BrowserRouter>

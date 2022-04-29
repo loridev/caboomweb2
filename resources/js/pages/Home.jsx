@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import {useContext, useEffect, useState} from "react";
 import Background from "../components/Background/Background";
+import AuthContext from "../context/AuthContext";
 
 function Home() {
+    const ctx = useContext(AuthContext);
     /*
     const [src, setSrc] = useState('/videos/mapache.mp4');
 
@@ -18,12 +20,13 @@ function Home() {
         }
         console.log(src);
     }
-    
-    useEffect(() => {
-        mediaQuery.addEventListener('change', handleWindowChange);
-        handleWindowChange(mediaQuery);
-    }, [src]);
     */
+
+    useEffect(() => {
+        if (localStorage.getItem('apitoken')) {
+            ctx.setToken(localStorage.getItem('apitoken'));
+        }
+    }, []);
     return (
         <Background text="CARLOS EL BOMBAS" buttonText="Try it now"/>
     );

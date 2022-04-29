@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use http\Client\Curl\User;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 
 class SocialiteController extends Controller
@@ -16,23 +17,14 @@ class SocialiteController extends Controller
     public function googleLoginCallback()
     {
         $googleUser = Socialite::with('google')->stateless()->with(['access_type' => 'offline'])->user();
-        $user = User::where('social_id', $googleUser->getId());
+        $user = User::query()->where('social_id', $googleUser->getId())->first();
 
-        if ($user) {
+        if (!is_null($user)) {
             $token = $user->createToken('passport_token')->accessToken;
 
-            return response()->json([
-                'message' => 'User logged in successfully!',
-                'token' => $token
-            ]);
+            return view('google', compact('token'));
         } else {
-            return response()->json([
-                'message' => 'User has to fill username and password',
-                'googleData' => [
-                    'social_id' => $googleUser->id,
-                    'email' => $googleUser->getEmail,
-                ]
-            ]);
+            return view('google', compact('googleUser'));
         }
 
     }

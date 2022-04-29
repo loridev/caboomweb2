@@ -6057,7 +6057,7 @@ if (document.getElementById('root')) {
             path: "/admin",
             element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_pages_AdminPanel__WEBPACK_IMPORTED_MODULE_0__["default"], {})
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
-            path: "/completeregister",
+            path: "/completeregister/:socialId/:email",
             element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_pages_CompleteRegister__WEBPACK_IMPORTED_MODULE_15__["default"], {})
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
             path: "*",
@@ -6808,35 +6808,28 @@ function CompleteRegister() {
       exists = _useState2[0],
       setExists = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState4 = _slicedToArray(_useState3, 2),
-      socialId = _useState4[0],
-      setSocialId = _useState4[1];
+      isLoading = _useState4[0],
+      setIsLoading = _useState4[1];
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState6 = _slicedToArray(_useState5, 2),
-      email = _useState6[0],
-      setEmail = _useState6[1];
+      isLoadingForm = _useState6[0],
+      setIsLoadingForm = _useState6[1];
 
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
-      _useState8 = _slicedToArray(_useState7, 2),
-      isLoading = _useState8[0],
-      setIsLoading = _useState8[1];
-
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
-      _useState10 = _slicedToArray(_useState9, 2),
-      isLoadingForm = _useState10[0],
-      setIsLoadingForm = _useState10[1];
+  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_10__.useParams)(),
+      socialId = _useParams.socialId,
+      email = _useParams.email;
 
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            _context.next = 2;
-            return getUser();
+            console.log(socialId + " | " + email);
 
-          case 2:
+          case 1:
           case "end":
             return _context.stop();
         }
@@ -6844,46 +6837,52 @@ function CompleteRegister() {
     }, _callee);
   })), []);
 
-  var getUser = /*#__PURE__*/function () {
-    var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
-      var response;
+  var registerUser = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(ev) {
+      var responseFromApi;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
+              ev.preventDefault();
               setIsLoading(true);
-              _context2.next = 3;
+              _context2.next = 4;
               return _utils_Http__WEBPACK_IMPORTED_MODULE_2__["default"].fetchData({
-                method: 'GET',
-                url: '/api/v1/auth/google/callback' + window.location.search
+                url: '/api/v1/auth/register',
+                method: 'POST',
+                body: {
+                  name: ev.target[0].value,
+                  password: ev.target[1].value,
+                  confirmPassword: ev.target[2].value,
+                  email: email,
+                  'social_id': socialId
+                }
               });
 
-            case 3:
-              response = _context2.sent;
+            case 4:
+              responseFromApi = _context2.sent;
 
-              if (response.status) {
-                if (response.data.token) {
-                  setExists(true);
-                  ctx.setToken(response.data.token);
-                  localStorage.setItem('apitoken', response.data.token);
-                  react_toastify__WEBPACK_IMPORTED_MODULE_3__.toast.success('User logged in successfully', {
-                    autoClose: 1000
+              if (!responseFromApi.status) {
+                Object.keys(responseFromApi.data.errors).forEach(function (k) {
+                  responseFromApi.data.errors[k].forEach(function (error) {
+                    react_toastify__WEBPACK_IMPORTED_MODULE_3__.toast.error(error);
                   });
-                  setIsLoading(false);
-                  setTimeout(function () {
-                    navigate('/', 1000);
-                  });
-                } else {
-                  setExists(false);
-                  react_toastify__WEBPACK_IMPORTED_MODULE_3__.toast.info('Introduce a name and a password for you new user');
-                  setSocialId(response.data.googleData['social_id']);
-                  setEmail(response.data.googleData.email);
-                }
+                });
+              } else {
+                react_toastify__WEBPACK_IMPORTED_MODULE_3__.toast.success('User registered successfully!', {
+                  autoClose: 1000
+                });
+                setTimeout(function () {
+                  ctx.setToken(responseFromApi.data.token);
+                  localStorage.setItem('apitoken', responseFromApi.data.token);
+                  navigate('/');
+                }, 1000);
               }
 
               setIsLoading(false);
+              console.log(responseFromApi.data);
 
-            case 6:
+            case 8:
             case "end":
               return _context2.stop();
           }
@@ -6891,46 +6890,8 @@ function CompleteRegister() {
       }, _callee2);
     }));
 
-    return function getUser() {
-      return _ref2.apply(this, arguments);
-    };
-  }();
-
-  var registerUser = /*#__PURE__*/function () {
-    var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3(ev) {
-      var responseFromApi;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
-        while (1) {
-          switch (_context3.prev = _context3.next) {
-            case 0:
-              ev.preventDefault();
-              setIsLoading(true);
-              _context3.next = 4;
-              return _utils_Http__WEBPACK_IMPORTED_MODULE_2__["default"].fetchData({
-                url: '/api/v1/auth/register',
-                method: 'POST',
-                body: {
-                  name: ev.target[0].value,
-                  password: ev.target[1].value,
-                  email: email,
-                  'social_id': socialId
-                }
-              });
-
-            case 4:
-              responseFromApi = _context3.sent;
-              console.log(responseFromApi.data);
-
-            case 6:
-            case "end":
-              return _context3.stop();
-          }
-        }
-      }, _callee3);
-    }));
-
     return function registerUser(_x) {
-      return _ref3.apply(this, arguments);
+      return _ref2.apply(this, arguments);
     };
   }();
 
@@ -6942,11 +6903,18 @@ function CompleteRegister() {
       onSubmit: registerUser,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_7__["default"], {
         id: "user",
-        label: "Name: "
+        label: "Name: ",
+        description: "3 characters minimum, 12 characters maximum, no symbols allowed"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        type: "password",
         id: "pwd",
         label: "Password: ",
-        type: "password"
+        description: "8 characters, 1 uppercase, 1 lowercase, 1 number at least"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_UI_Input_Input__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        type: "password",
+        id: "repeat",
+        label: "Repeat password: ",
+        description: "Repeat the password value"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_UI_ActionButton_ActionButton__WEBPACK_IMPORTED_MODULE_8__["default"], {
         disabled: isLoadingForm,
         type: "submit",
@@ -6975,16 +6943,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _components_Background_Background__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Background/Background */ "./resources/js/components/Background/Background.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _context_AuthContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../context/AuthContext */ "./resources/js/context/AuthContext.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
 
 function Home() {
+  var ctx = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_context_AuthContext__WEBPACK_IMPORTED_MODULE_2__["default"]);
   /*
   const [src, setSrc] = useState('/videos/mapache.mp4');
-    const mediaQuery = window.matchMedia('(min-width: 648px)');
-    const handleWindowChange = (ev) => {
+   const mediaQuery = window.matchMedia('(min-width: 648px)');
+   const handleWindowChange = (ev) => {
       debugger
       if (ev.matches) {
           console.log('grande');
@@ -6995,13 +6966,14 @@ function Home() {
       }
       console.log(src);
   }
-  
-  useEffect(() => {
-      mediaQuery.addEventListener('change', handleWindowChange);
-      handleWindowChange(mediaQuery);
-  }, [src]);
   */
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Background_Background__WEBPACK_IMPORTED_MODULE_1__["default"], {
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (localStorage.getItem('apitoken')) {
+      ctx.setToken(localStorage.getItem('apitoken'));
+    }
+  }, []);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_Background_Background__WEBPACK_IMPORTED_MODULE_1__["default"], {
     text: "CARLOS EL BOMBAS",
     buttonText: "Try it now"
   });
