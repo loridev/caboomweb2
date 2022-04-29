@@ -8,11 +8,6 @@
 </head>
 <body>
 <div id="root">
-    @if (isset($googleUser))
-        <a href="/completeregister/{{$googleUser->getId()}}/{{$googleUser->getEmail()}}">
-            Click here to complete your register with google
-        </a>
-    @endif
 </div>
 
 <script>
@@ -20,6 +15,10 @@
         debugger
         localStorage.setItem('apitoken', "{{$token}}")
         location.href = '/';
+    @endif
+    @if (isset($googleUser))
+        location.href = '/completeregister/{{$googleUser->getId()}}/{{$googleUser->getEmail()}}';
+        </a>
     @endif
 </script>
 </body>
