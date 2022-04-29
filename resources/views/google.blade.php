@@ -18,7 +18,6 @@
     @endif
     @if (isset($googleUser))
         location.href = '/completeregister/{{$googleUser->getId()}}/{{$googleUser->getEmail()}}';
-        </a>
     @endif
 </script>
 </body>
