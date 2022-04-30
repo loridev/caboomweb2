@@ -13,14 +13,14 @@ function Register() {
     const [isLoading, setIsLoading] = useState(false);
     const ctx = useContext(AuthContext);
 
+    const redirToGoogle = () => {
+        window.location.assign('/redirect/google');
+    }
+
     const register = async (ev) => {
         ev.preventDefault();
 
         setIsLoading(true);
-
-        const redirToGoogle = () => {
-            window.location.assign('/redirect/google');
-        }
 
         const responseFromApi = await Http.fetchData({
             url: '/api/v1/auth/register',
