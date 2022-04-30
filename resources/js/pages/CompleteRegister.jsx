@@ -16,10 +16,6 @@ function CompleteRegister() {
     const [isLoadingForm, setIsLoadingForm] = useState(false);
     const {socialId, email} = useParams();
 
-    useEffect(async () => {
-        console.log(socialId + " | " + email);
-    }, []);
-
     const registerUser = async (ev) => {
         ev.preventDefault();
 
@@ -55,8 +51,6 @@ function CompleteRegister() {
         }
 
         setIsLoading(false);
-
-        console.log(responseFromApi.data);
     }
 
     return (

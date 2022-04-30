@@ -69,8 +69,6 @@ function Shop() {
                 } else {
                     toast.error(response.data.error);
                 }
-
-                console.log(response);
             }
             setIsLoadingPurchase(false);
         }

@@ -50,8 +50,6 @@ function Register() {
 
         }
 
-        console.log(responseFromApi);
-
         setIsLoading(false);
     };
 

@@ -12,7 +12,6 @@
 
 <script>
     @if (isset($token))
-        debugger
         localStorage.setItem('apitoken', "{{$token}}")
         location.href = '/';
     @endif

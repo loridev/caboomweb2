@@ -17,10 +17,8 @@ export function AuthContextProvider(props) {
 
     const getToken = () => {
         try {
-            console.log('hola');
             setToken(localStorage.getItem('apitoken'));
         } catch (err) {
-            console.log('error retrieving token');
             setToken(null);
         }
     };
@@ -28,7 +26,6 @@ export function AuthContextProvider(props) {
     const checkAdmin = async () => {
         if (token) {
             const currUser = await Http.fetchData({url: '/api/v1/auth/current', method: 'POST', token});
-            console.log(currUser.status);
             if (currUser.status) {
                 setIsAdmin(currUser.data.data['is_admin'] === 1);
             } else {

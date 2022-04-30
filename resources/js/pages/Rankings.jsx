@@ -65,8 +65,6 @@ function Rankings() {
     const findMyself = () => {
         const index = fullData.findIndex((rank) => rank.current);
 
-        console.log(index);
-
         if (index !== -1) {
             setNumPage(Math.floor((index + 1) / 5 + 1));
         }
@@ -108,7 +106,7 @@ function Rankings() {
                 if (!responseFromApi.status) {
                     setData([]);
                 } else {
-                    console.log(responseFromApi.data);
+
                     setData(responseFromApi.data.rankings);
                 }
             }
@@ -150,7 +148,6 @@ function Rankings() {
                 if (!responseFromApi.status) {
                     setData([]);
                 } else {
-                    console.log(responseFromApi.data);
                     setData(responseFromApi.data.rankings);
                 }
             }
