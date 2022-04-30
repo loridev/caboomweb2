@@ -32,12 +32,12 @@ export function AuthContextProvider(props) {
             if (currUser.status) {
                 setIsAdmin(currUser.data.data['is_admin'] === 1);
             } else {
-                toast.error('There was an error retrieving user info', {autoClose: 1000});
+                toast.error('There was an error retrieving user info', {autoClose: 2000});
                 localStorage.removeItem('apitoken');
                 setToken(null);
                 setTimeout(() => {
                     window.location.assign('/login');
-                }, 1000);
+                }, 2000);
             }
         }
     }
