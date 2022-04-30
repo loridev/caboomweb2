@@ -18,6 +18,10 @@ function Register() {
 
         setIsLoading(true);
 
+        const redirToGoogle = () => {
+            window.location.assign('/redirect/google');
+        }
+
         const responseFromApi = await Http.fetchData({
             url: '/api/v1/auth/register',
             method: 'POST',
@@ -59,6 +63,7 @@ function Register() {
                 <Input type="password" id="pwd" label="Password: " description="8 characters, 1 uppercase, 1 lowercase, 1 number at least"/>
                 <Input type="password" id="repeat" label="Repeat password: " description="Repeat the password value" />
                 <ActionButton disabled={isLoading} type="submit">Submit</ActionButton>
+                <ActionButton disabled={isLoading} onClick={redirToGoogle} type="button">Sign in with Google</ActionButton>
             </Form>
             <LoadingSpinner show={isLoading} />
             <p>

@@ -55,8 +55,8 @@ function Login() {
             <Form onSubmit={logIn}>
                 <Input id="user" label="Name: " />
                 <Input id="pwd" label="Password: " type="password" />
-                <ActionButton disabled={isLoading} onClick={redirToGoogle} type="button">Sign in with Google</ActionButton>
                 <ActionButton disabled={isLoading} type="submit">Submit</ActionButton>
+                <ActionButton disabled={isLoading} onClick={redirToGoogle} type="button">Sign in with Google</ActionButton>
             </Form>
             <LoadingSpinner show={isLoading} />
             <p>
