@@ -1,7 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import Http from "../utils/Http";
 import {toast} from "react-toastify";
-import {useNavigate} from "react-router-dom";
 
 const AuthContext = createContext({
     token: '',
@@ -15,7 +14,6 @@ export default AuthContext;
 export function AuthContextProvider(props) {
     const [token, setToken] = useState('');
     const [isAdmin, setIsAdmin] = useState(null);
-    const navigate = useNavigate();
 
     const getToken = () => {
         try {
@@ -34,10 +32,12 @@ export function AuthContextProvider(props) {
             if (currUser.status) {
                 setIsAdmin(currUser.data.data['is_admin'] === 1);
             } else {
-                toast.error('There was an error retrieving user info');
+                toast.error('There was an error retrieving user info', {autoClose: 1000});
                 localStorage.removeItem('apitoken');
                 setToken(null);
-                navigate('/login');
+                setTimeout(() => {
+                    window.location.assign('/login');
+                }, 1000);
             }
         }
     }
