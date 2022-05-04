@@ -18,9 +18,11 @@
     z-index:0;
 }
 
+/*
 .video source {
     content: url("/videos/mapache.mp4");
 }
+*/
 
 .containerOver {
     position:absolute;
@@ -40,8 +42,10 @@
         font-size: 3.5rem;
     }
 
+    /*
     .video source {
         content: url("/videos/mapacheMobile.mp4");
     }
+    */
 }
 
