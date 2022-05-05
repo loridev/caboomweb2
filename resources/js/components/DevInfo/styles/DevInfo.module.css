@@ -1,0 +1,29 @@
+.dev {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 2rem;
+}
+
+.dev > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dev > div > img {
+    width: 10rem;
+    height: auto;
+    object-fit: cover;
+}
+
+.dev > div > p {
+    padding: 0 1rem 0 1rem;
+    text-align: center;
+}
+
+@media (max-width: 648px) {
+    .dev {
+        flex-direction: column;
+    }
+}
