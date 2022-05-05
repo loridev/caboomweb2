@@ -5479,7 +5479,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Button_module_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Button.module.css */ "./resources/js/UI/Button/Button.module.css");
+/* harmony import */ var _styles_Button_module_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/Button.module.css */ "./resources/js/UI/Button/styles/Button.module.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -5488,12 +5488,42 @@ function Button(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
     disabled: props.disabled,
     type: props.type,
-    className: "".concat(_Button_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].button, " ").concat(props.disabled && 'disabled'),
+    className: "".concat(_styles_Button_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].button, " ").concat(props.disabled && 'disabled'),
     children: props.children
   });
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Button);
+
+/***/ }),
+
+/***/ "./resources/js/UI/Button/ButtonSocialMedia.jsx":
+/*!******************************************************!*\
+  !*** ./resources/js/UI/Button/ButtonSocialMedia.jsx ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _styles_ButtonSocialMedia_module_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/ButtonSocialMedia.module.css */ "./resources/js/UI/Button/styles/ButtonSocialMedia.module.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+function ButtonSocialMedia(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
+    className: _styles_ButtonSocialMedia_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].button,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
+      className: "fa fa-".concat(props.name)
+    }), " ", props.name]
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ButtonSocialMedia);
 
 /***/ }),
 
@@ -6117,6 +6147,60 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/js/components/AboutUs/AboutUs.jsx":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/AboutUs/AboutUs.jsx ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _DevInfo_Dev__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../DevInfo/Dev */ "./resources/js/components/DevInfo/Dev.jsx");
+/* harmony import */ var _DevInfo_DevInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../DevInfo/DevInfo */ "./resources/js/components/DevInfo/DevInfo.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+function AboutUs(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
+    className: props.className,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+      children: "ABOUT US"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_DevInfo_DevInfo__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_DevInfo_Dev__WEBPACK_IMPORTED_MODULE_0__["default"], {
+        name: "Pol Adrover",
+        src: "/images/avatarPol.png",
+        age: "20",
+        description: "I'm studying DAW in La Salle Gr\xE0cia. I live in Sant Sadurn\xED d'Anoia. I enjoy playing hockey."
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_DevInfo_Dev__WEBPACK_IMPORTED_MODULE_0__["default"], {
+        name: "Alba Candelario",
+        src: "/images/avatarAlba.png",
+        age: "21",
+        description: "I'm studying DAW in La Salle Gr\xE0cia. I live in Vilassar de Mar. I enjoy travelling."
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_DevInfo_Dev__WEBPACK_IMPORTED_MODULE_0__["default"], {
+        name: "Marcos Hita",
+        src: "/images/avatarMarcosHita.png",
+        age: "19",
+        description: "I'm studying DAW in La Salle Gr\xE0cia. I live in Premi\xE0 de Mar. I enjoy watching football."
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_DevInfo_Dev__WEBPACK_IMPORTED_MODULE_0__["default"], {
+        name: "Eric Lorite",
+        src: "/images/avatarEric.png",
+        age: "20",
+        description: "I'm studying DAW in La Salle Gr\xE0cia. I live in Martorell. I enjoy listening to music."
+      })]
+    })]
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AboutUs);
+
+/***/ }),
+
 /***/ "./resources/js/components/Background/Background.jsx":
 /*!***********************************************************!*\
   !*** ./resources/js/components/Background/Background.jsx ***!
@@ -6218,6 +6302,42 @@ function DevInfo(props) {
 
 /***/ }),
 
+/***/ "./resources/js/components/FollowUs/FollowUs.jsx":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/FollowUs/FollowUs.jsx ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _UI_Button_ButtonSocialMedia__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../UI/Button/ButtonSocialMedia */ "./resources/js/UI/Button/ButtonSocialMedia.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+function FollowUs(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("section", {
+    className: props.className,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+      children: "FOLLOW US"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_UI_Button_ButtonSocialMedia__WEBPACK_IMPORTED_MODULE_0__["default"], {
+        name: "instagram"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_UI_Button_ButtonSocialMedia__WEBPACK_IMPORTED_MODULE_0__["default"], {
+        name: "twitter"
+      })]
+    })]
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FollowUs);
+
+/***/ }),
+
 /***/ "./resources/js/components/Form/Form.jsx":
 /*!***********************************************!*\
   !*** ./resources/js/components/Form/Form.jsx ***!
@@ -6257,47 +6377,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _DevInfo_Dev__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../DevInfo/Dev */ "./resources/js/components/DevInfo/Dev.jsx");
-/* harmony import */ var _DevInfo_DevInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../DevInfo/DevInfo */ "./resources/js/components/DevInfo/DevInfo.jsx");
-/* harmony import */ var _styles_Idea_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/Idea.module.css */ "./resources/js/components/Idea/styles/Idea.module.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _styles_Idea_module_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/Idea.module.css */ "./resources/js/components/Idea/styles/Idea.module.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
 
-
-
-function Idea() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("section", {
-    className: _styles_Idea_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].container,
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
+function Idea(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("section", {
+    className: props.className,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
       children: "ABOUT CARLOS"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
       children: "info about the game"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
-      children: "ABOUT US"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_DevInfo_DevInfo__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_DevInfo_Dev__WEBPACK_IMPORTED_MODULE_0__["default"], {
-        name: "Pol Adrover",
-        src: "/images/avatarPol.png",
-        age: "20",
-        description: "I'm studying DAW in La Salle Gr\xE0cia. I live in Sant Sadurn\xED d'Anoia. I enjoy playing hockey."
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_DevInfo_Dev__WEBPACK_IMPORTED_MODULE_0__["default"], {
-        name: "Alba Candelario",
-        src: "/images/avatarAlba.png",
-        age: "21",
-        description: "I'm studying DAW in La Salle Gr\xE0cia. I live in Vilassar de Mar. I enjoy travelling."
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_DevInfo_Dev__WEBPACK_IMPORTED_MODULE_0__["default"], {
-        name: "Marcos Hita",
-        src: "/images/avatarMarcosHita.png",
-        age: "19",
-        description: "I'm studying DAW in La Salle Gr\xE0cia. I live in Premi\xE0 de Mar. I enjoy watching football."
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_DevInfo_Dev__WEBPACK_IMPORTED_MODULE_0__["default"], {
-        name: "Eric Lorite",
-        src: "/images/avatarEric.png",
-        age: "20",
-        description: "I'm studying DAW in La Salle Gr\xE0cia. I live in Martorell. I enjoy listening to music."
-      })]
     })]
   });
 }
@@ -7062,10 +7154,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _components_Background_Background__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Background/Background */ "./resources/js/components/Background/Background.jsx");
-/* harmony import */ var _components_Idea_Idea__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Idea/Idea */ "./resources/js/components/Idea/Idea.jsx");
-/* harmony import */ var _context_AuthContext__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../context/AuthContext */ "./resources/js/context/AuthContext.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_AboutUs_AboutUs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/AboutUs/AboutUs */ "./resources/js/components/AboutUs/AboutUs.jsx");
+/* harmony import */ var _components_Background_Background__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Background/Background */ "./resources/js/components/Background/Background.jsx");
+/* harmony import */ var _components_FollowUs_FollowUs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/FollowUs/FollowUs */ "./resources/js/components/FollowUs/FollowUs.jsx");
+/* harmony import */ var _components_Idea_Idea__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Idea/Idea */ "./resources/js/components/Idea/Idea.jsx");
+/* harmony import */ var _context_AuthContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../context/AuthContext */ "./resources/js/context/AuthContext.jsx");
+/* harmony import */ var _styles_Home_module_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles/Home.module.css */ "./resources/js/pages/styles/Home.module.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
 
 
 
@@ -7075,17 +7173,23 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Home() {
-  var ctx = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_context_AuthContext__WEBPACK_IMPORTED_MODULE_3__["default"]);
+  var ctx = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_context_AuthContext__WEBPACK_IMPORTED_MODULE_5__["default"]);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (localStorage.getItem('apitoken')) {
       ctx.setToken(localStorage.getItem('apitoken'));
     }
   }, []);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_Background_Background__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Background_Background__WEBPACK_IMPORTED_MODULE_2__["default"], {
       text: "CARLOS EL BOMBAS",
       buttonText: "Try it now"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_Idea_Idea__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_Idea_Idea__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      className: _styles_Home_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].container
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_AboutUs_AboutUs__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      className: _styles_Home_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].container
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_FollowUs_FollowUs__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      className: _styles_Home_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].container
+    })]
   });
 }
 
@@ -7261,7 +7365,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function NotFound() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h1", {
-    children: "404, Not Found!"
+    children: "404, Not Found! \uD83D\uDCA3\uD83D\uDCA3\uD83D\uDCA3\uD83D\uDCA3\uD83D\uDCA5\uD83D\uDCA5\uD83D\uDCA5\uD83D\uDCA5"
   });
 }
 
@@ -13569,10 +13673,10 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/UI/Button/Button.module.css":
-/*!************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/UI/Button/Button.module.css ***!
-  \************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/UI/Button/styles/Button.module.css":
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/UI/Button/styles/Button.module.css ***!
+  \*******************************************************************************************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -13580,16 +13684,43 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
 // Imports
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".rjT-1tKHBpXYFAQRzhA8Lg\\=\\= {\n    display: inline-block;\n    border-radius: 4px;\n    background-color: var(--main-color);\n    border: none;\n    color: #FFFFFF;\n    text-align: center;\n    font-size: 1rem;\n    padding: 0.5rem;\n    width: 5rem;\n    height: -webkit-fit-content;\n    height: -moz-fit-content;\n    height: fit-content;\n    cursor: pointer;\n    margin: 5px;\n    transition: 0.3s;\n}\n\n.rjT-1tKHBpXYFAQRzhA8Lg\\=\\=:hover {\n    background-color: #7B1976FF;\n}\n\nbutton:disabled {\n    background-color: var(--main-color-disabled);\n    color: var(--text-disabled);\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".dpd77q6CUqGqXCOAfW8VWg\\=\\= {\n    display: inline-block;\n    border-radius: 4px;\n    background-color: var(--main-color);\n    border: none;\n    color: #FFFFFF;\n    text-align: center;\n    font-size: 1rem;\n    padding: 0.5rem;\n    width: 5rem;\n    height: -webkit-fit-content;\n    height: -moz-fit-content;\n    height: fit-content;\n    cursor: pointer;\n    margin: 5px;\n    transition: 0.3s;\n}\n\n.dpd77q6CUqGqXCOAfW8VWg\\=\\=:hover {\n    background-color: #7B1976FF;\n}\n\nbutton:disabled {\n    background-color: var(--main-color-disabled);\n    color: var(--text-disabled);\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"button": "rjT-1tKHBpXYFAQRzhA8Lg=="
+	"button": "dpd77q6CUqGqXCOAfW8VWg=="
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/UI/Button/styles/ButtonSocialMedia.module.css":
+/*!******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/UI/Button/styles/ButtonSocialMedia.module.css ***!
+  \******************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".dPGpfjlj7kPhifiuK45LQg\\=\\= {\n    display: inline-block;\n    border-radius: 4px;\n    background-color: var(--main-color);\n    border: none;\n    color: #FFFFFF;\n    text-align: center;\n    font-size: 1rem;\n    padding: 0.5rem;\n    width: 7rem;\n    height: -webkit-fit-content;\n    height: -moz-fit-content;\n    height: fit-content;\n    cursor: pointer;\n    margin: 5px;\n    transition: 0.3s;\n}\n\n.dPGpfjlj7kPhifiuK45LQg\\=\\=:hover {\n    background-color: #7B1976FF;\n}", ""]);
+// Exports
+___CSS_LOADER_EXPORT___.locals = {
+	"button": "dPGpfjlj7kPhifiuK45LQg=="
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -13931,6 +14062,33 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".tVdse9uEjjmAb0nKA5ITRg\\=\\= {\n    c
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"ranking": "tVdse9uEjjmAb0nKA5ITRg=="
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/pages/styles/Home.module.css":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/pages/styles/Home.module.css ***!
+  \*************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".An9hGFApQffu\\+i7ELY83LA\\=\\= {\n    padding-left: 2rem;\n}\n", ""]);
+// Exports
+___CSS_LOADER_EXPORT___.locals = {
+	"container": "An9hGFApQffu+i7ELY83LA=="
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -67085,10 +67243,10 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
-/***/ "./resources/js/UI/Button/Button.module.css":
-/*!**************************************************!*\
-  !*** ./resources/js/UI/Button/Button.module.css ***!
-  \**************************************************/
+/***/ "./resources/js/UI/Button/styles/Button.module.css":
+/*!*********************************************************!*\
+  !*** ./resources/js/UI/Button/styles/Button.module.css ***!
+  \*********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -67096,9 +67254,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Button_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./Button.module.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/UI/Button/Button.module.css");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Button_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./Button.module.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/UI/Button/styles/Button.module.css");
 
             
 
@@ -67112,6 +67270,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Button_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./resources/js/UI/Button/styles/ButtonSocialMedia.module.css":
+/*!********************************************************************!*\
+  !*** ./resources/js/UI/Button/styles/ButtonSocialMedia.module.css ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_ButtonSocialMedia_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./ButtonSocialMedia.module.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/UI/Button/styles/ButtonSocialMedia.module.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_ButtonSocialMedia_module_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_ButtonSocialMedia_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
@@ -67472,6 +67660,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_RankList_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./resources/js/pages/styles/Home.module.css":
+/*!***************************************************!*\
+  !*** ./resources/js/pages/styles/Home.module.css ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Home_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./Home.module.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/pages/styles/Home.module.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Home_module_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Home_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 

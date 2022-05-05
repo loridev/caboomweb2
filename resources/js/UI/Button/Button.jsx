@@ -1,4 +1,4 @@
-import clases from './Button.module.css';
+import clases from './styles/Button.module.css';
 function Button(props) {
 
     return (
