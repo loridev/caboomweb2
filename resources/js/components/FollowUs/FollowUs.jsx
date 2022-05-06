@@ -5,8 +5,8 @@ function FollowUs(props) {
         <section className={props.className}>
             <h2>FOLLOW US</h2>
             <div>
-                <ButtonSocialMedia name="instagram" />
-                <ButtonSocialMedia name="twitter" />
+                <ButtonSocialMedia name="instagram" href="https://www.instagram.com/carloselbombas/" />
+                <ButtonSocialMedia name="twitter" href="https://twitter.com/caboomgame" />
             </div>
         </section>
     );

@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+.container > img {
+    width: 40vw;
+    height: auto;
+    object-fit: cover;
+}
+
+@media (max-width: 648px) {
+    .container {
+        flex-direction: column;
+    }
+    .container > img:first-of-type {
+        margin-bottom: 1rem;
+    }
+    .container > img {
+        width: 80vw;
+    }
+}
