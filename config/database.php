@@ -90,6 +90,11 @@ return [
             // 'encrypt' => env('DB_ENCRYPT', 'yes'),
             // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'true'),
         ],
+        'mongodb' => [
+            'driver' => 'mongodb',
+            'dsn' => 'mongodb+srv://eric:1234@carloselbombas.1ecwd.mongodb.net/carloselbombas?retryWrites=true&w=majority',
+            'database' => 'carloselbombas',
+        ],
 
     ],
 

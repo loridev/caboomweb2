@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ItemUserController;
+use App\Http\Controllers\LevelController;
 use App\Http\Controllers\RankingController;
 use App\Http\Controllers\SocialiteController;
 use App\Http\Controllers\UserController;
@@ -22,6 +23,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('/v1')->group(function () {
+    Route::get('/levels/{altId}', [LevelController::class, 'show']);
     Route::prefix('/auth')->group(function () {
         Route::post('/register', [UserController::class, 'register'])
             ->middleware(_ValidateRegister::class);
