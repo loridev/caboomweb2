@@ -33,11 +33,6 @@ Route::prefix('/v1')->group(function () {
             Route::post('current', [UserController::class, 'currentUser']);
             Route::post('logout', [UserController::class, 'logout']);
         });
-
-        Route::prefix('/google')->group(function () {
-            Route::get('/url', [SocialiteController::class, 'getGoggleUrl']);
-            Route::get('/callback', [SocialiteController::class, 'googleLoginCallback']);
-        });
     });
 
     Route::prefix('/rankings')->group(function () {
