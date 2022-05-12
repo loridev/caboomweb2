@@ -7,6 +7,7 @@ import Http from "../utils/Http";
 import RankItem from "../components/Ranking/RankItem";
 import LoadingSpinner from "../UI/LoadingSpinner/LoadingSpinner";
 import AuthContext from "../context/AuthContext";
+import {toast} from "react-toastify";
 
 function Rankings() {
     const [fullData, setFullData] = useState([]);
@@ -63,6 +64,10 @@ function Rankings() {
     }
 
     const findMyself = () => {
+        if (!localStorage.getItem('apitoken')) {
+            toast.warn('You must be logged in to find yourself in the rankings!');
+            return;
+        }
         const index = fullData.findIndex((rank) => rank.current);
 
         if (index !== -1) {
