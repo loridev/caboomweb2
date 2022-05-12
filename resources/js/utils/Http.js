@@ -16,11 +16,7 @@ const Http = {
 
                 const response = await fetch(conf.url, reqObj);
 
-            //conf.token ? headers.Authorization = `Bearer ${conf.token}`: '';
-
             const responseJson = await response.json();
-
-            console.log(response.status);
 
             if (!response.ok) {
                 return { status: false, data: responseJson };
