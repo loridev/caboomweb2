@@ -11,7 +11,7 @@ function Background(props) {
             <div className={clases.containerOver}>
                 <h1 className={clases.text}>{props.text}</h1>
                 {localStorage.getItem('apitoken') ? (
-                    <a href="/installer/CarlosElSetups.exe" download="CarlosInstaller.exe">
+                    <a href="/installer/CarlosElSetup.exe" download="CarlosInstaller.exe">
                         <ActionButton>{props.buttonText}</ActionButton>
                     </a>
                     )
